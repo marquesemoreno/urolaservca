@@ -60,3 +60,7 @@ Doctors' portraits in `public/assets/equipe` (inconsistent framing; to be re-sho
 ## Accessibility & Inclusion
 
 Target WCAG AA. Patient base includes older men, so legible type sizes and strong contrast matter; mobile-first use.
+
+## FAQ draft pending clinic confirmation (21/10/2026)
+
+A draft FAQ from the clinic's WhatsApp history is partly published. Items intentionally NOT published until the clinic confirms: old phone numbers in the draft ((77) 98800-1010 and 3422-1010, which conflict with the confirmed (77) 99925-7550 and 3427-7267); "by arrival order" vs appointment time; the exams and procedures list; vasectomy rules (the draft's own warning: Lei 14.443/2022); insurance discount and partner guides (insurance stays off the site); prices (do not publish); doctor names that differ from the site (Danilo Leite vs Danilo Andrade, Maryse Vannessa vs Vanessa, Luciano Martins, Antônio Carlos); sending documents by WhatsApp (conflicts with the privacy page); the QUERO RECEBER newsletter opt-in. Published after review: scheduling, hours, address with CEP, reminders, reschedule, companion, children, female gynecologist, preparation, results, surgeries, payment methods and 30-day return.
