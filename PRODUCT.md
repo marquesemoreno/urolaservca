@@ -30,7 +30,7 @@ Urology, gynecology, coloproctology, endocrinology, psychology and nutrition und
 
 - Address: Av. Otávio Santos, 395, Sala 202, Centro Médico Dr. Altamirando da Costa Lima (2º andar), Recreio, Vitória da Conquista - BA.
 - Booking: WhatsApp (77) 99925-7550; landline (77) 3427-7267; urolaservca@gmail.com.
-- Hours on the site: Mon–Thu 07h–18h, Fri 07h–17h (not yet confirmed by the client).
+- Hours: Mon–Thu 07h–18h, Fri 07h–17h (confirmed by the client).
 - Social: Instagram and Facebook @urolaservca.
 - Data protection officer for LGPD: Dr. Alan Pascoal, provisionally.
 
@@ -38,8 +38,8 @@ Urology, gynecology, coloproctology, endocrinology, psychology and nutrition und
 
 - Medical advertising must follow CFM rules: no promise of results, no before/after, no diagnosis, professional registration shown next to every name.
 - Professionals: Dr. Alan Pascoal (CRM-BA 27945, RQE 12941/13027), Dr. Danilo Andrade, Dra. Dayana Feitoza, Dra. Indira Baqueiro, Dra. Maryse Vanessa, Ione Freitas (psychologist), Dra. Thamiris Carvalho. More doctors are to be added.
-- Insurance: the clinic attends private patients and some insurance plans. The plans are not yet defined, so the site must not name any until the client lists them.
-- Open decisions: confirmed opening hours; list of accepted insurance plans; new doctors and standardized portraits.
+- Insurance: the clinic currently accepts only Cassi. The client asked to keep insurance OUT of the site for now: do not name any plan on the pages or in the FAQ until they say otherwise.
+- Open decisions: new doctors (Dr. Antonio Carlos, Dr. Iuri Vasconcelos seen on Instagram; specialty, registration and portrait still needed) and standardized portraits.
 
 ## Brand Commitments
 
