@@ -25,7 +25,7 @@
 <link rel="icon" href="/assets/logo-urolaser-petroleo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -345,6 +345,30 @@
     },
     {
      "@type": "Question",
+     "name": "Não sei o que tenho. Posso marcar a consulta mesmo assim?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Pode. Você não precisa de diagnóstico nem de exames prévios para marcar: basta contar à equipe qual é a queixa ou a especialidade que procura. Na consulta, o médico conversa com você, avalia o caso e, se necessário, solicita exames."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "O que acontece na consulta de urologia?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A consulta começa com uma conversa sobre seus sintomas, histórico de saúde e medicamentos em uso. Conforme o caso, o médico pode fazer um exame físico e pedir exames complementares. Ao final, explica o que encontrou e quais são os próximos passos. Você pode tirar dúvidas durante todo o atendimento."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Minha consulta e meus dados ficam em sigilo?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sim. As informações da consulta são protegidas pelo sigilo médico e tratadas conforme a Lei Geral de Proteção de Dados. Mais detalhes na Política de Privacidade deste site."
+     }
+    },
+    {
+     "@type": "Question",
      "name": "Onde fica a Urolaser em Vitória da Conquista?",
      "acceptedAnswer": {
       "@type": "Answer",
@@ -380,7 +404,7 @@
      "name": "Quem é o Dr. Alan Pascoal?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "O Dr. Alan Pascoal é urologista, diretor técnico da Urolaser (CRM-BA 27945, RQE 12941/13027). Fez residência no Hospital Federal do Andaraí/Ipanema, no Rio de Janeiro, e observership em cirurgia robótica no Memorial Sloan Kettering Cancer Center, em Nova York."
+      "text": "O Dr. Alan Pascoal é urologista e diretor técnico da Urolaser (CRM-BA 27945, RQE 12941/13027). Fez residência no Hospital Federal do Andaraí/Ipanema, no Rio de Janeiro. A formação completa está na seção Corpo clínico."
      }
     },
     {
@@ -419,12 +443,13 @@ a{color:var(--brand);text-underline-offset:3px}
 a:hover{color:var(--brand-deep)}
 :focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:6px}
 ::selection{background:var(--green);color:var(--ink)}
-h1,h2,h3{margin:0;letter-spacing:-0.025em;text-wrap:balance}
+h1,h2,h3{margin:0;letter-spacing:-0.02em;text-wrap:balance;font-family:'Outfit','Manrope',system-ui,sans-serif}
 p{margin:0}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
 .section{padding:clamp(64px,8vw,104px) 0}
 .skip{position:absolute;left:12px;top:-60px;background:var(--brand-deep);color:#fff;padding:10px 16px;border-radius:10px;z-index:100;transition:top .2s}
 .skip:focus{top:12px}
+a.skip:hover{color:#fff}
 
 /* botões */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:1.5px solid transparent;transition:background-color .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease)}
@@ -432,6 +457,8 @@ p{margin:0}
 .btn-primary:hover{background:var(--brand-deep);color:#fff}
 .btn-light{background:#fff;color:var(--brand-deep)}
 .btn-light:hover{background:var(--brand-soft);color:var(--brand-deep)}
+.btn-green{background:var(--green);color:var(--ink)}
+.btn-green:hover{background:#5ED6AE;color:var(--ink)}
 .btn-ghost{border-color:var(--brand);color:var(--brand)}
 .btn-ghost:hover{background:var(--brand);color:#fff}
 .ico{flex:none}
@@ -441,7 +468,7 @@ p{margin:0}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
 .top .logo img{height:42px;width:auto}
 .nav{display:none;gap:28px;font-weight:600;font-size:15px}
-.nav a{color:var(--ink);text-decoration:none;padding:8px 0;border-bottom:2px solid transparent;transition:border-color .2s}
+.nav a{color:var(--ink);text-decoration:none;padding:13px 0;border-bottom:2px solid transparent;transition:border-color .2s}
 .nav a:hover{border-color:var(--green);color:var(--ink)}
 .top-actions{display:flex;align-items:center;gap:10px}
 .top .btn{min-height:44px;padding:10px 18px;font-size:15px}
@@ -463,8 +490,14 @@ p{margin:0}
 .hero h1{font-size:clamp(34px,5vw,56px);line-height:1.08;font-weight:800}
 .hero .lead{margin-top:20px;font-size:clamp(17px,1.5vw,19px);color:var(--muted);max-width:56ch}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.creds{margin-top:22px;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.creds{margin-top:22px;font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
 @media (min-width:900px){.hero .wrap{grid-template-columns:1.1fr .9fr;gap:64px}.hero-photo{aspect-ratio:4/5;max-height:600px;order:2}}
+
+/* faixa prática */
+.strip{background:var(--surface);border-block:1px solid var(--line)}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:6px 28px;padding-top:14px;padding-bottom:14px;font-size:15px;font-weight:600;color:var(--brand-deep)}
+.strip a{display:inline-flex;align-items:center;min-height:44px;color:var(--brand-deep)}
+.strip span{display:inline-flex;align-items:center;min-height:44px}
 
 /* títulos de seção */
 .sec-head{max-width:760px;margin-bottom:44px}
@@ -483,21 +516,26 @@ p{margin:0}
 .steps-sec{background:var(--surface);border-block:1px solid var(--line)}
 .steps{display:grid;gap:28px;margin:0;padding:0;list-style:none;counter-reset:s}
 .steps li{counter-increment:s;display:grid;gap:8px;padding-top:20px;border-top:3px solid var(--green)}
-.steps li::before{content:counter(s);font-weight:800;font-size:15px;color:var(--brand)}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--green);color:var(--ink);font-weight:800;font-size:18px;font-family:'Outfit',sans-serif}
 .steps strong{font-size:20px;letter-spacing:-0.01em}
 .steps span{color:var(--muted);max-width:44ch}
+.note{margin-top:36px;padding:16px 20px;background:var(--brand-soft);border-radius:14px;color:var(--brand-deep);font-weight:600;max-width:62ch}
 @media (min-width:800px){.steps{grid-template-columns:repeat(3,1fr);gap:40px}}
 
 /* especialidades */
 .spec-list{display:grid;gap:0;border-top:1px solid var(--line)}
-.spec{display:grid;gap:10px;padding:28px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);transition:background-color .25s var(--ease),padding .25s var(--ease)}
+.spec{display:grid;gap:10px;padding:28px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);transition:background-color .25s var(--ease)}
 .spec h3{font-size:clamp(24px,2.6vw,32px);font-weight:800}
 .spec p{color:var(--muted);max-width:56ch}
-.spec .go{font-weight:700;color:var(--brand)}
+.spec .go{justify-self:start;font-weight:700;color:var(--brand);padding:10px 18px;border-radius:999px;border:1.5px solid var(--green);white-space:nowrap;transition:background-color .25s var(--ease),color .25s var(--ease)}
+.spec .who{display:block;margin-top:8px;font-size:15px;color:var(--brand-deep);font-weight:600}
 @media (min-width:800px){.spec{grid-template-columns:300px 1fr auto;align-items:center;gap:32px}}
-@media (hover:hover){.spec:hover{background:var(--brand-soft);padding-inline:20px}}
-.also{margin-top:28px;color:var(--muted);max-width:70ch}
-.also strong{color:var(--ink)}
+@media (hover:hover){.spec:hover{background:var(--brand-soft)}.spec:hover .go{background:var(--green);color:var(--ink)}}
+.also-title{margin-top:44px;font-size:20px;font-weight:700}
+.also-list{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));margin:20px 0 0;padding:0;list-style:none}
+.also-list li{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;display:flex;flex-direction:column;gap:4px}
+.also-list strong{font-size:17px}
+.also-list span{font-size:15px;color:var(--muted)}
 
 /* equipe */
 .lead-doc{display:grid;gap:28px;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:clamp(18px,3vw,32px);margin-bottom:24px}
@@ -505,7 +543,7 @@ p{margin:0}
 .lead-doc .info{display:flex;flex-direction:column;justify-content:center;gap:14px}
 .lead-doc h3{font-size:clamp(26px,2.6vw,34px);font-weight:800}
 .tag{align-self:flex-start;font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px;background:var(--brand-soft);color:var(--brand-deep)}
-.reg{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.reg{font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
 .lead-doc p{color:var(--muted);max-width:60ch}
 @media (min-width:860px){.lead-doc{grid-template-columns:1fr 1fr;gap:40px}}
 .team{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));margin:0;padding:0;list-style:none}
@@ -522,8 +560,8 @@ p{margin:0}
 .faq summary{cursor:pointer;padding:18px 0;font-weight:700;font-size:17px;line-height:1.4}
 .faq summary h3{display:inline;font-size:inherit;font-weight:inherit;letter-spacing:0}
 .faq details[open]{background:#fff;border-color:var(--brand)}
-.faq details p{padding:0 0 20px;color:var(--muted)}
-.disc{margin-top:24px;font-size:14px;color:var(--muted);max-width:62ch}
+.faq details p{padding:0 0 20px;color:var(--muted);max-width:62ch}
+.disc{margin-top:24px;font-size:15px;color:var(--muted);max-width:62ch}
 
 /* contato */
 .contact{background:var(--brand-deep);color:var(--on-dark)}
@@ -534,6 +572,7 @@ p{margin:0}
 .facts dd{margin:0}
 .contact a:not(.btn){color:#fff}
 .contact a:not(.btn):hover{color:#7BE5BE}
+.facts a{display:inline-flex;align-items:center;min-height:44px}
 .contact .btn-light{color:var(--brand-deep)}
 .map{position:relative;border-radius:24px;overflow:hidden;min-height:380px;background:#0B5568;display:flex;flex-direction:column}
 .map iframe{flex:1;width:100%;min-height:340px;border:0}
@@ -542,10 +581,10 @@ p{margin:0}
 @media (min-width:960px){.contact .wrap{grid-template-columns:1fr 1fr;align-items:stretch;gap:56px}}
 
 /* rodapé */
-.foot{background:#06303B;color:var(--on-dark-muted);font-size:14px}
+.foot{background:#06303B;color:var(--on-dark-muted);font-size:15px}
 .foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding-top:36px;padding-bottom:36px}
 .foot img{height:42px;width:auto;margin-bottom:10px}
-.foot a{color:var(--on-dark)}
+.foot a{color:var(--on-dark);display:inline-flex;align-items:center;min-height:44px}
 .foot p{max-width:620px}
 .foot nav{display:flex;gap:18px;align-items:flex-start}
 
@@ -566,6 +605,7 @@ p{margin:0}
   <div class="wrap">
     <a class="logo" href="#topo"><img src="assets/logo-urolaser-petroleo.png" alt="Urolaser Especialidades Médicas" width="890" height="255"></a>
     <nav class="nav" aria-label="Principal">
+      <a href="#consulta">Primeira consulta</a>
       <a href="#especialidades">Especialidades</a>
       <a href="#equipe">Equipe</a>
       <a href="#duvidas">Dúvidas</a>
@@ -576,10 +616,12 @@ p{margin:0}
       <details class="menu">
         <summary aria-label="Abrir menu">Menu</summary>
         <div class="menu-list">
+          <a href="#consulta">Primeira consulta</a>
           <a href="#especialidades">Especialidades</a>
           <a href="#equipe">Equipe</a>
           <a href="#duvidas">Dúvidas</a>
           <a href="#contato">Contato</a>
+          <a href="tel:+557734277267">Ligar (77) 3427-7267</a>
         </div>
       </details>
     </div>
@@ -590,7 +632,7 @@ p{margin:0}
   <div class="wrap">
     <div>
       <h1>Seu urologista em Vitória da Conquista, com acolhimento e sigilo.</h1>
-      <p class="lead">Atendimento liderado pelo Dr. Alan Pascoal e por uma equipe multidisciplinar. Consultas detalhadas, pontuais e sigilosas, e procedimentos a laser minimamente invasivos quando indicados.</p>
+      <p class="lead">Atendimento liderado pelo Dr. Alan Pascoal e por uma equipe multidisciplinar. Consultas detalhadas, com hora marcada e sigilo, e procedimentos a laser minimamente invasivos quando indicados.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.18-3.1.82.83-3.02-.2-.31A8.1 8.1 0 0 1 12.04 3.8Zm-3.2 4.2c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.17 1.78 2.83 4.4 3.85 2.17.85 2.62.68 3.09.64.47-.04 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.23-.17-.49-.3-.26-.13-1.52-.75-1.76-.84-.23-.09-.4-.13-.58.13-.17.26-.66.84-.81 1-.15.18-.3.2-.56.07-.26-.13-1.1-.4-2.1-1.29-.77-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.18.04-.33-.02-.46-.07-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.5Z"/></svg>Agendar pelo WhatsApp</a>
         <a class="btn btn-ghost" href="#especialidades">Ver especialidades</a>
@@ -604,50 +646,65 @@ p{margin:0}
   </div>
 </section>
 
-<section id="sobre" class="section">
+<div class="strip">
   <div class="wrap">
-    <div class="sec-head"><h2>Clínica de urologia e saúde integrada em Vitória da Conquista.</h2></div>
-    <p class="about-lead"><strong>A Urolaser Especialidades Médicas é uma clínica de urologia e saúde integrada em Vitória da Conquista (BA)</strong>, na Av. Otávio Santos, 395, Sala 202. Reúne urologia, ginecologia, coloproctologia, endocrinologia, psicologia e nutrição, com procedimentos a laser minimamente invasivos. O atendimento é liderado pelo urologista Dr. Alan Pascoal (CRM-BA 27945, RQE 12941/13027), com residência no Hospital Federal do Andaraí/Ipanema (RJ) e observership em cirurgia robótica no Memorial Sloan Kettering Cancer Center (Nova York).</p>
-    <ul class="points">
-      <li><strong>Acolhimento e sigilo</strong><span>Consultas detalhadas, pontuais e empáticas, com a privacidade que o assunto pede.</span></li>
-      <li><strong>Equipe no mesmo lugar</strong><span>Urologia, ginecologia, coloproctologia, endocrinologia, psicologia e nutrição conversam entre si e acompanham você de perto.</span></li>
-      <li><strong>Tecnologia a laser</strong><span>Procedimentos minimamente invasivos, com indicação definida pelo médico em consulta.</span></li>
-    </ul>
+    <span>Seg a Qui 07h–18h · Sexta 07h–17h</span>
+    <span>Recreio, 2º andar, Vitória da Conquista - BA</span>
+    <a href="tel:+557734277267">Ligar (77) 3427-7267</a>
   </div>
-</section>
+</div>
 
 <section id="consulta" class="section steps-sec">
   <div class="wrap">
     <div class="sec-head"><h2>Como é a primeira consulta.</h2><p>Três passos, sem complicação.</p></div>
     <ol class="steps">
       <li><strong>Você agenda pelo WhatsApp</strong><span>Informe a especialidade e a equipe confirma o melhor horário.</span></li>
-      <li><strong>Conversa com o médico</strong><span>A consulta é detalhada e pontual. Você pode falar com calma sobre qualquer sintoma.</span></li>
+      <li><strong>Conversa com o médico</strong><span>Você não precisa saber o que tem para marcar. Conte o que está sentindo, com calma e sem pressa.</span></li>
       <li><strong>Você sai com um plano</strong><span>O médico explica o que encontrou e, se necessário, indica exames ou tratamento.</span></li>
     </ol>
+    <p class="note">Dor muito forte ou sintomas súbitos? Procure um pronto-socorro ou ligue para o SAMU (192).</p>
+  </div>
+</section>
+
+<section id="sobre" class="section">
+  <div class="wrap">
+    <div class="sec-head"><h2>Clínica de urologia e saúde integrada em Vitória da Conquista.</h2></div>
+    <p class="about-lead"><strong>A Urolaser Especialidades Médicas é uma clínica de urologia e saúde integrada em Vitória da Conquista (BA)</strong>, na Av. Otávio Santos, 395, Sala 202. Reúne urologia, ginecologia, coloproctologia, endocrinologia, psicologia e nutrição, com procedimentos a laser minimamente invasivos. O atendimento é liderado pelo urologista Dr. Alan Pascoal (CRM-BA 27945, RQE 12941/13027).</p>
+    <ul class="points">
+      <li><strong>Acolhimento e sigilo</strong><span>Consultas detalhadas e empáticas, com a privacidade que o assunto pede.</span></li>
+      <li><strong>Equipe no mesmo lugar</strong><span>Urologia, ginecologia, coloproctologia, endocrinologia, psicologia e nutrição conversam entre si e acompanham você de perto.</span></li>
+      <li><strong>Tecnologia a laser</strong><span>Procedimentos minimamente invasivos, com indicação definida pelo médico em consulta.</span></li>
+    </ul>
   </div>
 </section>
 
 <section id="especialidades" class="section">
   <div class="wrap">
-    <div class="sec-head"><h2>Especialidades médicas: urologia, ginecologia e coloproctologia.</h2></div>
+    <div class="sec-head"><h2>Especialidades: urologia, ginecologia e coloproctologia.</h2></div>
     <div class="spec-list">
       <a class="spec" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta%20de%20Urologia." target="_blank" rel="noopener">
         <h3>Urologia</h3>
-        <p>Saúde da próstata, saúde sexual masculina (andrologia), cálculo renal, urologia infantil e cirurgias a laser minimamente invasivas.</p>
+        <p>Saúde da próstata, saúde sexual masculina (andrologia), cálculo renal, urologia infantil e cirurgias a laser minimamente invasivas.<span class="who">Com Dr. Alan Pascoal e Dr. Danilo Andrade</span></p>
         <span class="go">Agendar avaliação →</span>
       </a>
       <a class="spec" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta%20de%20Ginecologia." target="_blank" rel="noopener">
         <h3>Ginecologia</h3>
-        <p>Saúde integral feminina e prevenção.</p>
+        <p>Saúde integral feminina e prevenção.<span class="who">Com Dra. Dayana Feitoza</span></p>
         <span class="go">Agendar avaliação →</span>
       </a>
       <a class="spec" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta%20de%20Coloproctologia." target="_blank" rel="noopener">
         <h3>Coloproctologia</h3>
-        <p>Patologias de cólon e reto, com procedimentos a laser.</p>
+        <p>Patologias de cólon e reto, com procedimentos a laser.<span class="who">Com Dra. Indira Baqueiro</span></p>
         <span class="go">Agendar avaliação →</span>
       </a>
     </div>
-    <p class="also"><strong>Também na Urolaser:</strong> endocrinologia e metabologia, psicologia e neuropsicologia, nutrição clínica, clínica médica e manejo de obesidade.</p>
+    <h3 class="also-title">Também na Urolaser</h3>
+    <ul class="also-list">
+      <li><strong>Endocrinologia e metabologia</strong><span>Dra. Maryse Vanessa</span></li>
+      <li><strong>Psicologia e neuropsicologia</strong><span>Ione Freitas</span></li>
+      <li><strong>Nutrição clínica</strong><span>Acompanhamento nutricional</span></li>
+      <li><strong>Clínica médica e obesidade</strong><span>Dra. Thamiris Carvalho</span></li>
+    </ul>
   </div>
 </section>
 
@@ -660,7 +717,7 @@ p{margin:0}
         <span class="tag">Diretor Técnico</span>
         <h3>Dr. Alan Pascoal</h3>
         <span class="reg">CRM-BA 27945 · RQE 12941 / 13027</span>
-        <p>Urologista com residência no Hospital Federal do Andaraí/Ipanema (RJ) e observership em cirurgia robótica no Memorial Sloan Kettering Cancer Center, em Nova York. Lidera a Urolaser com foco em saúde da próstata, cirurgia a laser e procedimentos minimamente invasivos.</p>
+        <p>Urologista, com residência no Hospital Federal do Andaraí/Ipanema (RJ) e observership em cirurgia robótica no Memorial Sloan Kettering Cancer Center, em Nova York (período de observação e acompanhamento de cirurgias). Lidera a Urolaser com foco em saúde da próstata, cirurgia a laser e procedimentos minimamente invasivos.</p>
         <a class="btn btn-primary" style="align-self:flex-start" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.18-3.1.82.83-3.02-.2-.31A8.1 8.1 0 0 1 12.04 3.8Zm-3.2 4.2c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.17 1.78 2.83 4.4 3.85 2.17.85 2.62.68 3.09.64.47-.04 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.23-.17-.49-.3-.26-.13-1.52-.75-1.76-.84-.23-.09-.4-.13-.58.13-.17.26-.66.84-.81 1-.15.18-.3.2-.56.07-.26-.13-1.1-.4-2.1-1.29-.77-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.18.04-.33-.02-.46-.07-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.5Z"/></svg>Agendar com Dr. Alan</a>
       </div>
     </div>
@@ -702,6 +759,18 @@ p{margin:0}
         <p>Procure um urologista diante de sangue na urina, dor ou ardência ao urinar, dor lombar intensa, alteração do jato urinário, infecções urinárias de repetição ou dificuldades na saúde sexual. Para o acompanhamento da próstata, converse com o urologista sobre o melhor momento de iniciar os exames, que costuma ser a partir dos 50 anos, ou dos 45 anos em quem tem fatores de risco. Em caso de dor muito forte ou sintomas súbitos, vá a um pronto-socorro.</p>
       </details>
       <details>
+        <summary><h3>Não sei o que tenho. Posso marcar a consulta mesmo assim?</h3></summary>
+        <p>Pode. Você não precisa de diagnóstico nem de exames prévios para marcar: basta contar à equipe qual é a queixa ou a especialidade que procura. Na consulta, o médico conversa com você, avalia o caso e, se necessário, solicita exames.</p>
+      </details>
+      <details>
+        <summary><h3>O que acontece na consulta de urologia?</h3></summary>
+        <p>A consulta começa com uma conversa sobre seus sintomas, histórico de saúde e medicamentos em uso. Conforme o caso, o médico pode fazer um exame físico e pedir exames complementares. Ao final, explica o que encontrou e quais são os próximos passos. Você pode tirar dúvidas durante todo o atendimento.</p>
+      </details>
+      <details>
+        <summary><h3>Minha consulta e meus dados ficam em sigilo?</h3></summary>
+        <p>Sim. As informações da consulta são protegidas pelo sigilo médico e tratadas conforme a Lei Geral de Proteção de Dados. Mais detalhes na Política de Privacidade deste site.</p>
+      </details>
+      <details>
         <summary><h3>Onde fica a Urolaser em Vitória da Conquista?</h3></summary>
         <p>A Urolaser fica na Av. Otávio Santos, 395, Sala 202, no 2º andar do Centro Médico Dr. Altamirando da Costa Lima, bairro Recreio, em Vitória da Conquista - BA.</p>
       </details>
@@ -719,7 +788,7 @@ p{margin:0}
       </details>
       <details>
         <summary><h3>Quem é o Dr. Alan Pascoal?</h3></summary>
-        <p>O Dr. Alan Pascoal é urologista, diretor técnico da Urolaser (CRM-BA 27945, RQE 12941/13027). Fez residência no Hospital Federal do Andaraí/Ipanema, no Rio de Janeiro, e observership em cirurgia robótica no Memorial Sloan Kettering Cancer Center, em Nova York.</p>
+        <p>O Dr. Alan Pascoal é urologista e diretor técnico da Urolaser (CRM-BA 27945, RQE 12941/13027). Fez residência no Hospital Federal do Andaraí/Ipanema, no Rio de Janeiro. A formação completa está na seção Corpo clínico.</p>
       </details>
       <details>
         <summary><h3>O que é cirurgia a laser em urologia?</h3></summary>
@@ -744,7 +813,7 @@ p{margin:0}
         <div><dt>Telefone / WhatsApp</dt><dd><a href="tel:+557734277267">(77) 3427-7267</a><br><a href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta." target="_blank" rel="noopener">(77) 99925-7550</a></dd></div>
         <div><dt>E-mail e redes</dt><dd><a href="mailto:urolaservca@gmail.com">urolaservca@gmail.com</a><br><a href="https://www.instagram.com/urolaservca" target="_blank" rel="noopener">@urolaservca</a> · <a href="https://www.facebook.com/urolaservca/" target="_blank" rel="noopener">Facebook</a></dd></div>
       </dl>
-      <a class="btn btn-light" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.18-3.1.82.83-3.02-.2-.31A8.1 8.1 0 0 1 12.04 3.8Zm-3.2 4.2c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.17 1.78 2.83 4.4 3.85 2.17.85 2.62.68 3.09.64.47-.04 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.23-.17-.49-.3-.26-.13-1.52-.75-1.76-.84-.23-.09-.4-.13-.58.13-.17.26-.66.84-.81 1-.15.18-.3.2-.56.07-.26-.13-1.1-.4-2.1-1.29-.77-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.18.04-.33-.02-.46-.07-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.5Z"/></svg>Agendar pelo WhatsApp</a>
+      <a class="btn btn-green" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.18-3.1.82.83-3.02-.2-.31A8.1 8.1 0 0 1 12.04 3.8Zm-3.2 4.2c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.17 1.78 2.83 4.4 3.85 2.17.85 2.62.68 3.09.64.47-.04 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.23-.17-.49-.3-.26-.13-1.52-.75-1.76-.84-.23-.09-.4-.13-.58.13-.17.26-.66.84-.81 1-.15.18-.3.2-.56.07-.26-.13-1.1-.4-2.1-1.29-.77-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.18.04-.33-.02-.46-.07-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.5Z"/></svg>Agendar pelo WhatsApp</a>
     </div>
     <div class="map">
       <iframe title="Mapa da Urolaser" src="https://www.google.com/maps?q=Av.+Ot%C3%A1vio+Santos,+395,+Recreio,+Vit%C3%B3ria+da+Conquista+-+BA&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -760,7 +829,7 @@ p{margin:0}
   <div class="wrap">
     <div>
       <img src="assets/logo-urolaser-branco.png" alt="Urolaser Especialidades Médicas" width="890" height="255">
-      <p>Responsável Técnico: Dr. Alan Pascoal · CRM-BA 27945 · RQE 12941 / 13027. Conteúdo informativo, em conformidade com as normas de publicidade médica do CFM. Não substitui consulta.</p>
+      <p>Responsável Técnico: Dr. Alan Pascoal · CRM-BA 27945 · RQE 12941 / 13027. Conteúdo informativo. Não substitui consulta médica.</p>
     </div>
     <nav aria-label="Rodapé">
       <a href="/privacidade">Privacidade</a>
@@ -770,5 +839,11 @@ p{margin:0}
   </div>
 </footer>
 <a class="float" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta." target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.18-3.1.82.83-3.02-.2-.31A8.1 8.1 0 0 1 12.04 3.8Zm-3.2 4.2c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.17 1.78 2.83 4.4 3.85 2.17.85 2.62.68 3.09.64.47-.04 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.23-.17-.49-.3-.26-.13-1.52-.75-1.76-.84-.23-.09-.4-.13-.58.13-.17.26-.66.84-.81 1-.15.18-.3.2-.56.07-.26-.13-1.1-.4-2.1-1.29-.77-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.18.04-.33-.02-.46-.07-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.5Z"/></svg>WhatsApp</a>
+<script>
+(function(){var m=document.querySelector('.menu');if(!m)return;
+m.addEventListener('click',function(e){if(e.target.closest('.menu-list a'))m.removeAttribute('open')});
+document.addEventListener('click',function(e){if(!m.contains(e.target))m.removeAttribute('open')});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')m.removeAttribute('open')});})();
+</script>
 </body>
 </html>
