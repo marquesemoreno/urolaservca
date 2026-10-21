@@ -37,9 +37,9 @@ Urology, gynecology, coloproctology, endocrinology, psychology and nutrition und
 ## Capabilities and Constraints
 
 - Medical advertising must follow CFM rules: no promise of results, no before/after, no diagnosis, professional registration shown next to every name.
-- Professionals: Dr. Alan Pascoal (CRM-BA 27945, RQE 12941/13027), Dr. Danilo Andrade, Dra. Dayana Feitoza, Dra. Indira Baqueiro, Dra. Maryse Vanessa, Ione Freitas (psychologist), Dra. Thamiris Carvalho. More doctors are to be added.
+- Professionals (official roster "Corpo Clínico 2026", spreadsheet in the client folder; its CPFs must never be published): Dr. Alan Pascoal (urology), Dr. Antônio Carlos (urology), Dr. Danilo Andrade (urology), Dra. Dayana Feitoza (gynecology), Dra. Indira Baqueiro (proctology), Dr. Iuri Vasconcelos (psychiatry, CRM 28678), Dr. Luciano Martins (pediatric surgery, CRM 15183, RQE 7732), Dra. Maryse Vannessa (endocrinology), Dra. Thamiris Carvalho (general practice), Dra. Lívia Vasconcelos (nutrition, CRN 7628), Ione Freitas (psychology). Standardized portraits delivered on 2026-10-21 (files in SITE/FOTOS MÉDICOS are named per professional). Dr. Jessé Alves has a portrait but is not in the roster: specialty and registration still needed before he can be shown.
 - Insurance: the clinic currently accepts only Cassi. The client asked to keep insurance OUT of the site for now: do not name any plan on the pages or in the FAQ until they say otherwise.
-- Open decisions: new doctors (Dr. Antonio Carlos, Dr. Iuri Vasconcelos seen on Instagram; specialty, registration and portrait still needed) and standardized portraits.
+- Open decisions: Dr. Jessé Alves specialty and CRM/RQE. Maryse is spelled Vannessa (roster, photo file and the clinic FAQ draft; Instagram posts say Vanessa).
 
 ## Brand Commitments
 
@@ -47,7 +47,7 @@ Existing name and logos in `public/assets` (petroleum and white versions). Portu
 
 ## Evidence on Hand
 
-Doctors' portraits in `public/assets/equipe` (inconsistent framing; to be re-shot in a single standard). No testimonials, case studies, press or patient numbers exist. Do not fabricate any.
+Doctors' portraits in `public/assets/equipe`, standardized 4:5 set (clinic waiting-room background, white coat). No testimonials, case studies, press or patient numbers exist. Do not fabricate any.
 
 ## Product Principles
 
