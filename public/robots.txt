@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://urolaservca.com.br/sitemap.xml
