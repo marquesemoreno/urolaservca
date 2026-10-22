@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-22T00:00:00Z",
+  "title": "Design System: Urolaser Especialidades Médicas",
+  "extensions": {
+    "colorMeta": {
+      "deep": { "role": "primary", "displayName": "Deep Petrol", "canonical": "#00485A", "tonalRamp": ["#001A21", "#00303D", "#00485A", "#2F6475", "#5F8391", "#93A9B3", "#C4D1D7", "#EAF0F2"] },
+      "brand": { "role": "primary", "displayName": "Clinic Petrol", "canonical": "#006078", "tonalRamp": ["#00222B", "#003D4E", "#006078", "#2E7C90", "#5E9AAA", "#92B8C3", "#C3D8DE", "#E9F1F3"] },
+      "teal": { "role": "primary", "displayName": "Lagoon Teal", "canonical": "#0A808A", "tonalRamp": ["#002E32", "#01545A", "#0A808A", "#3C98A0", "#6BB0B6", "#9CC9CD", "#C8E0E2", "#EAF3F4"] },
+      "green": { "role": "secondary", "displayName": "Signal Green", "canonical": "#2FBF8F", "tonalRamp": ["#0B3B2C", "#146A4E", "#1F9A71", "#2FBF8F", "#5ED6AE", "#8DE3C8", "#BDEFDF", "#E6F8F1"] },
+      "bg": { "role": "neutral", "displayName": "Cool Mist", "canonical": "#F3F7F7", "tonalRamp": ["#1A2323", "#3A4646", "#5E6B6B", "#8A9696", "#B5BFBF", "#D3DADA", "#E8EDED", "#F3F7F7"] },
+      "ink": { "role": "neutral", "displayName": "Petrol Ink", "canonical": "#0A2A33", "tonalRamp": ["#041216", "#0A2A33", "#26454E", "#46616A", "#6F858C", "#9AABB0", "#C6D0D3", "#E8EDEE"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero h1 only." },
+      "headline": { "displayName": "Headline", "purpose": "Section h2s." },
+      "title": { "displayName": "Title", "purpose": "Card and doctor titles." },
+      "body": { "displayName": "Body", "purpose": "Reading text at 17px." },
+      "label": { "displayName": "Label", "purpose": "Buttons, nav, small meta." }
+    },
+    "shadows": [
+      { "name": "lift", "value": "0 22px 40px -28px rgba(0,0,0,.4)", "purpose": "White cards over the hero; specialty hover." },
+      { "name": "header-bar", "value": "0 14px 30px -22px rgba(0,0,0,.28)", "purpose": "Sticky pill header." },
+      { "name": "menu", "value": "0 18px 40px -20px rgba(10,42,51,.3)", "purpose": "Mobile menu popover." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(.22,1,.36,1)", "purpose": "Buttons (.25s) and card hover (.35s)." }
+    ],
+    "breakpoints": [
+      { "name": "bento-2", "value": "700px" },
+      { "name": "chips-steps", "value": "860px" },
+      { "name": "desktop", "value": "960px" },
+      { "name": "bento-4", "value": "1040px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Pill action; WhatsApp booking.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Agendar pelo WhatsApp</a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 26px;border-radius:999px;background:var(--brand,#006078);color:#fff;font-family:Manrope,system-ui,sans-serif;font-weight:700;font-size:16px;text-decoration:none;transition:background-color .25s cubic-bezier(.22,1,.36,1)} .ds-btn-primary:hover{background:var(--deep,#00485A)} .ds-btn-primary:focus-visible{outline:3px solid #2FBF8F;outline-offset:3px}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-white",
+      "description": "Ghost pill on the petrol hero.",
+      "html": "<div style=\"background:#00485A;padding:16px\"><a class=\"ds-btn-outline\" href=\"#\">Conheça a equipe</a></div>",
+      "css": ".ds-btn-outline{display:inline-flex;align-items:center;min-height:50px;padding:12px 26px;border-radius:999px;border:1.5px solid rgba(255,255,255,.55);color:#fff;font-family:Manrope,system-ui,sans-serif;font-weight:700;font-size:16px;text-decoration:none;transition:background-color .25s} .ds-btn-outline:hover{background:rgba(255,255,255,.14)} .ds-btn-outline:focus-visible{outline:3px solid #2FBF8F;outline-offset:3px}"
+    },
+    {
+      "name": "Info Chip",
+      "kind": "card",
+      "refersTo": "info-chip",
+      "description": "White card overlapping the hero edge.",
+      "html": "<div class=\"ds-chip\"><div class=\"ds-chip-big\">Seg a qui, 07h às 18h</div><div class=\"ds-chip-sub\">Sexta até 17h</div></div>",
+      "css": ".ds-chip{display:flex;flex-direction:column;gap:6px;background:#fff;color:#0A2A33;border-radius:22px;padding:20px 22px;box-shadow:0 22px 40px -28px rgba(0,0,0,.4)} .ds-chip-big{font-family:Outfit,sans-serif;font-size:22px;font-weight:700;line-height:1.2} .ds-chip-sub{font-family:Manrope,sans-serif;font-size:15px;color:#46616A}"
+    },
+    {
+      "name": "Specialty Card",
+      "kind": "card",
+      "refersTo": "specialty-card",
+      "description": "Bento tile with hover lift.",
+      "html": "<a class=\"ds-sp\" href=\"#\"><div><h3>Urologia</h3><p>Cuidado com próstata e saúde masculina.</p></div></a>",
+      "css": ".ds-sp{display:flex;flex-direction:column;justify-content:space-between;min-height:210px;padding:24px;background:#fff;border:1px solid #D6E3E5;border-radius:24px;color:#0A2A33;text-decoration:none;font-family:Manrope,sans-serif;transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s,border-color .35s} .ds-sp h3{margin:0;font-family:Outfit,sans-serif;font-weight:600;font-size:23px;line-height:1.15} .ds-sp p{margin:8px 0 0;color:#46616A;font-size:15.5px} .ds-sp:hover{transform:translateY(-4px);box-shadow:0 22px 40px -28px rgba(0,0,0,.4);border-color:#2FBF8F}"
+    },
+    {
+      "name": "Stat Band",
+      "kind": "custom",
+      "refersTo": "stat-band",
+      "description": "Deep petrol band with green unit marks.",
+      "html": "<div class=\"ds-stats\"><div><strong>9<em>+</em></strong><span>anos</span></div><div><strong>11</strong><span>profissionais</span></div><div><strong>9</strong><span>especialidades</span></div></div>",
+      "css": ".ds-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;background:#00485A;color:#fff;border-radius:32px;padding:32px} .ds-stats strong{display:block;font-family:Outfit,sans-serif;font-size:44px;line-height:1;font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap} .ds-stats em{font-style:normal;color:#2FBF8F} .ds-stats span{display:block;margin-top:8px;color:#BFD9DE;font-size:15px;font-family:Manrope,sans-serif}"
+    },
+    {
+      "name": "FAQ Row",
+      "kind": "custom",
+      "refersTo": "specialty-card",
+      "description": "Disclosure row; open state turns white with brand border.",
+      "html": "<details class=\"ds-faq\"><summary>Como agendar?</summary><p>Pelo WhatsApp.</p></details>",
+      "css": ".ds-faq{background:#F3F7F7;border:1px solid #D6E3E5;border-radius:18px;padding:0 22px;font-family:Manrope,sans-serif} .ds-faq summary{cursor:pointer;padding:18px 0;font-weight:700;font-size:17px} .ds-faq[open]{background:#fff;border-color:#006078} .ds-faq p{margin:0;padding:0 0 20px;color:#46616A}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Team Under One Roof",
+    "overview": "The home page is a drenched petrol-to-teal panel on a pale cool ground, with white rounded cards laid over it. Real doctor portraits are the only imagery; one green is spent on numerals, rules, step markers and focus. Depth comes from tonal layering plus a single soft negative-spread shadow.",
+    "keyCharacteristics": [
+      "Petrol-to-teal 125deg gradient hero with arch-framed lead portrait",
+      "Three white info cards overlapping the hero's bottom edge",
+      "Bento specialty grid with a dark feature tile; deep petrol stat band",
+      "Pill buttons and header; 16 to 36px radii elsewhere",
+      "Outfit display, Manrope body"
+    ],
+    "rules": [
+      { "name": "The One Green Rule", "body": "Signal Green marks numerals, counters, rules and focus; never body text and never large fills outside the CTA band or button.", "section": "colors" },
+      { "name": "The Drenched Hero Rule", "body": "Petrol-to-teal appears as a gradient only in the hero and the feature tile; flat Deep Petrol is used for the stat band and contact.", "section": "colors" },
+      { "name": "The Tabular Facts Rule", "body": "Hours, registrations and stats use tabular numerals.", "section": "typography" },
+      { "name": "The Soft Lift Rule", "body": "Shadows are negative-spread and neutral; they never offset hard and never tint.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep every portrait at 4:5 (or the arch frame) with object-position near the top (12 to 20%) so faces are never cropped.",
+      "Do use Deep Petrol for flat dark sections and the 125deg Deep/Brand/Teal gradient only for the hero.",
+      "Do keep touch targets at 44px or more and body copy at 17px or more for the older-reader audience.",
+      "Do show registration next to every doctor's name.",
+      "Do gate hover motion on (hover:hover) and honor prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't add imagery other than real doctor portraits and the map.",
+      "Don't use Signal Green as text color on white or as a large background.",
+      "Don't use hard offset shadows or tinted glows; use the Lift vocabulary.",
+      "Don't use sharp corners; the smallest radius is 16px except for the 8px focus ring.",
+      "Don't invent stats, testimonials or prices."
+    ]
+  }
+}

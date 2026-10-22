@@ -575,154 +575,183 @@
 </script>
 <style>
 :root{
-  --ink:#0A2A33; --muted:#46616A; --brand:#006078; --brand-deep:#00485A; --brand-soft:#E4F1F0;
-  --green:#2FBF8F; --bg:#F5F8F8; --surface:#FFFFFF; --line:#D9E5E7; --on-dark:#EAF4F5; --on-dark-muted:#BFD9DE;
-  --radius:18px; --wrap:1160px;
-  --ease:cubic-bezier(.22,1,.36,1);
+  --ink:#0A2A33; --muted:#46616A; --brand:#006078; --deep:#00485A; --teal:#0A808A; --soft:#E4F1F0; --mint:#CFEBE6;
+  --green:#2FBF8F; --bg:#F3F7F7; --surface:#fff; --line:#D6E3E5; --on-dark:#EAF4F5; --on-dark-muted:#BFD9DE;
+  --r:24px; --wrap:1180px; --ease:cubic-bezier(.22,1,.36,1);
+  --lift:0 22px 40px -28px rgba(0,0,0,.4);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:var(--brand);text-underline-offset:3px}
-a:hover{color:var(--brand-deep)}
-:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:6px}
+a:hover{color:var(--deep)}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:8px}
 ::selection{background:var(--green);color:var(--ink)}
 h1,h2,h3{margin:0;letter-spacing:-0.02em;text-wrap:balance;font-family:'Outfit','Manrope',system-ui,sans-serif}
 p{margin:0}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-.section{padding:clamp(64px,8vw,104px) 0}
-.skip{position:absolute;left:12px;top:-60px;background:var(--brand-deep);color:#fff;padding:10px 16px;border-radius:10px;z-index:100;transition:top .2s}
+.section{padding:clamp(48px,6vw,100px) 0}
+.skip{position:absolute;left:12px;top:-60px;background:var(--deep);color:#fff;padding:10px 16px;border-radius:10px;z-index:100;transition:top .2s}
 .skip:focus{top:12px}
 a.skip:hover{color:#fff}
+.ico,.arr{flex:none}
 
 /* botões */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:1.5px solid transparent;transition:background-color .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 26px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:1.5px solid transparent;transition:background-color .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease)}
 .btn-primary{background:var(--brand);color:#fff}
-.btn-primary:hover{background:var(--brand-deep);color:#fff}
-.btn-light{background:#fff;color:var(--brand-deep)}
-.btn-light:hover{background:var(--brand-soft);color:var(--brand-deep)}
+.btn-primary:hover{background:var(--deep);color:#fff}
+.btn-white{background:#fff;color:var(--deep)}
+.btn-white:hover{background:var(--mint);color:var(--deep)}
+.btn-outline{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-outline:hover{background:rgba(255,255,255,.14);color:#fff}
 .btn-green{background:var(--green);color:var(--ink)}
 .btn-green:hover{background:#5ED6AE;color:var(--ink)}
-.btn-ghost{border-color:var(--brand);color:var(--brand)}
-.btn-ghost:hover{background:var(--brand);color:#fff}
-.ico{flex:none}
 
-/* cabeçalho */
-.top{position:sticky;top:0;z-index:50;background:rgba(245,248,248,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
-.top .logo img{height:42px;width:auto}
-.nav{display:none;gap:28px;font-weight:600;font-size:15px}
+/* cabeçalho em pílula */
+.top{position:sticky;top:0;z-index:50;padding:12px 0;background:linear-gradient(var(--bg) 60%,transparent)}
+.top .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:8px 10px 8px 22px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;box-shadow:0 14px 30px -22px rgba(0,0,0,.28)}
+.top .logo img{height:40px;width:auto}
+.nav{display:none;gap:30px;font-weight:600;font-size:15px}
 .nav a{color:var(--ink);text-decoration:none;padding:13px 0;border-bottom:2px solid transparent;transition:border-color .2s}
 .nav a:hover{border-color:var(--green);color:var(--ink)}
-.top-actions{display:flex;align-items:center;gap:10px}
-.top .btn{min-height:44px;padding:10px 18px;font-size:15px}
+.top-actions{display:flex;align-items:center;gap:8px}
+.top .btn{min-height:46px;padding:10px 20px;font-size:15px}
 .menu{position:relative}
-.menu summary{list-style:none;cursor:pointer;min-height:44px;min-width:44px;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--line);border-radius:999px;padding:0 16px;font-weight:700;font-size:15px;background:#fff}
+.menu summary{list-style:none;cursor:pointer;min-height:46px;display:flex;align-items:center;padding:0 18px;border:1.5px solid var(--line);border-radius:999px;font-weight:700;font-size:15px;background:#fff}
 .menu summary::-webkit-details-marker{display:none}
-.menu-list{position:absolute;right:0;top:54px;min-width:220px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:8px;box-shadow:0 18px 40px -20px rgba(10,42,51,.3);display:flex;flex-direction:column}
+.menu-list{position:absolute;right:0;top:56px;min-width:230px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:8px;box-shadow:0 18px 40px -20px rgba(10,42,51,.3);display:flex;flex-direction:column}
 .menu-list a{padding:13px 14px;border-radius:10px;color:var(--ink);text-decoration:none;font-weight:600}
-.menu-list a:hover{background:var(--brand-soft)}
-@media (min-width:900px){.nav{display:flex}.menu{display:none}}
+.menu-list a:hover{background:var(--soft)}
+@media (min-width:960px){.nav{display:flex}.menu{display:none}}
 
 /* hero */
-.hero{background:linear-gradient(180deg,var(--brand-soft),var(--bg))}
-.hero .wrap{display:grid;gap:36px;align-items:center;padding-top:clamp(32px,6vw,72px);padding-bottom:clamp(48px,7vw,88px)}
-.hero-photo{position:relative;border-radius:28px;overflow:hidden;background:var(--brand-soft);aspect-ratio:16/9;max-height:240px;order:-1;margin:0}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
-.hero-photo figcaption{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.94);border-radius:14px;padding:10px 14px;font-size:14px;line-height:1.35}
-.hero-photo figcaption strong{display:block;font-size:15px}
-.hero h1{font-size:clamp(34px,5vw,56px);line-height:1.08;font-weight:800}
-.hero .lead{margin-top:20px;font-size:clamp(17px,1.5vw,19px);color:var(--muted);max-width:56ch}
-.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.creds{margin-top:22px;font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
-@media (min-width:900px){.hero .wrap{grid-template-columns:1.1fr .9fr;gap:64px}.hero-photo{aspect-ratio:4/5;max-height:600px;order:2}}
+.hero{padding:6px 0 0}
+.hero-panel{position:relative;border-radius:36px;background:linear-gradient(125deg,var(--deep) 0%,var(--brand) 48%,var(--teal) 100%);color:#fff;padding:clamp(28px,5vw,64px) clamp(26px,5vw,64px) clamp(110px,12vw,150px);display:grid;gap:28px;align-items:center}
+.hero h1{font-size:clamp(32px,5.2vw,62px);line-height:1.05;font-weight:700;letter-spacing:-0.03em}
+.hero .lead{margin-top:20px;font-size:clamp(17px,1.5vw,19px);color:var(--on-dark);max-width:50ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-doc{position:relative;justify-self:center;width:min(100%,420px)}
+.hero-doc .ring{position:absolute;inset:-5% -6% -2% -6%;border-radius:50%;background:var(--deep);opacity:.9}
+.hero-doc .ring::after{content:"";position:absolute;inset:-4%;border-radius:50%;border:2px solid rgba(47,191,143,.55);border-left-color:transparent;border-bottom-color:transparent;transform:rotate(18deg)}
+.hero-doc figure{position:relative;margin:0;border-radius:999px 999px 28px 28px;overflow:hidden;aspect-ratio:4/4.6;background:var(--soft)}
+.hero-doc img{width:100%;height:100%;object-fit:cover;object-position:50% 14%}
+.doc-chip{position:absolute;left:-4%;bottom:8%;display:flex;flex-direction:column;background:#fff;color:var(--ink);border-radius:18px;padding:12px 16px;box-shadow:var(--lift);font-size:14px;line-height:1.35}
+.doc-chip strong{font-size:15px}
+.doc-chip span{color:var(--muted);font-variant-numeric:tabular-nums}
+@media (min-width:960px){
+  .hero-panel{grid-template-columns:1.05fr .95fr;gap:40px;padding-top:56px}
+  .hero-doc{order:2;width:min(100%,440px)}
+}
+@media (max-width:959px){.hero-doc{order:-1;width:min(64%,230px);margin-bottom:26px}.hero-doc figure{aspect-ratio:4/4.2}}
 
-/* faixa prática */
-.strip{background:var(--surface);border-block:1px solid var(--line)}
-.strip .wrap{display:flex;flex-wrap:wrap;gap:6px 28px;padding-top:14px;padding-bottom:14px;font-size:15px;font-weight:600;color:var(--brand-deep)}
-.strip a{display:inline-flex;align-items:center;min-height:44px;color:var(--brand-deep)}
-.strip span{display:inline-flex;align-items:center;min-height:44px}
+/* cartões que cruzam o hero */
+.chips{position:relative;z-index:2;display:grid;gap:14px;margin-top:clamp(-96px,-8vw,-76px);padding:0 clamp(14px,3vw,36px)}
+.chip{background:#fff;border-radius:22px;padding:20px 22px;box-shadow:var(--lift);display:flex;flex-direction:column;gap:6px}
+.chip .big{font-family:'Outfit',sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.01em;line-height:1.2}
+.chip .sub{font-size:15px;color:var(--muted)}
+.chip a.link{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:700;font-size:15px;text-decoration:none;color:var(--brand)}
+.chip a.link:hover{color:var(--deep)}
+.avs{display:flex;margin:0;padding:0;list-style:none}
+.avs li{width:44px;height:44px;border-radius:50%;overflow:hidden;border:3px solid #fff;margin-left:-12px;background:var(--soft)}
+.avs li:first-child{margin-left:0}
+.avs img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+@media (min-width:860px){.chips{grid-template-columns:repeat(3,1fr)}}
 
-/* títulos de seção */
-.sec-head{max-width:760px;margin-bottom:44px}
-.sec-head h2{font-size:clamp(28px,3.4vw,42px);line-height:1.12;font-weight:800}
-.sec-head p{margin-top:16px;color:var(--muted);max-width:62ch}
+/* faixa de números */
+.stats{margin-top:clamp(36px,5vw,64px);background:var(--deep);color:#fff;border-radius:32px;padding:clamp(24px,4vw,44px);display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+.stat strong{display:block;font-family:'Outfit',sans-serif;font-size:clamp(34px,5vw,56px);line-height:1;font-weight:700;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
+.stat strong em{font-style:normal;color:var(--green)}
+.stat span{display:block;margin-top:8px;color:var(--on-dark-muted);font-size:15px}
+@media (min-width:860px){.stats{padding-inline:clamp(36px,5vw,64px)}}
+
+/* títulos */
+.sec-head{max-width:760px;margin-bottom:40px}
+.sec-head h2{font-size:clamp(30px,3.6vw,46px);line-height:1.1;font-weight:700}
+.sec-head p{margin-top:14px;color:var(--muted);max-width:60ch}
 
 /* sobre */
-.about-lead{font-size:clamp(18px,1.7vw,21px);line-height:1.6;max-width:62ch;color:var(--ink)}
-.points{display:grid;gap:0;margin:44px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
-.points li{display:grid;gap:6px;padding:22px 0;border-bottom:1px solid var(--line)}
-.points strong{font-size:19px;letter-spacing:-0.01em}
-.points span{color:var(--muted);max-width:60ch}
-@media (min-width:800px){.points li{grid-template-columns:280px 1fr;gap:32px;align-items:baseline}}
+.about{display:grid;gap:36px}
+.about-lead{font-size:clamp(18px,1.7vw,21px);line-height:1.65;max-width:60ch}
+.points{display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.points li{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px 22px;display:grid;gap:4px}
+.points strong{font-family:'Outfit',sans-serif;font-size:19px;font-weight:600}
+.points span{color:var(--muted);font-size:16px}
+@media (min-width:960px){.about{grid-template-columns:1.1fr .9fr;gap:64px;align-items:start}}
 
 /* primeira consulta */
-.steps-sec{background:var(--surface);border-block:1px solid var(--line)}
-.steps{display:grid;gap:28px;margin:0;padding:0;list-style:none;counter-reset:s}
-.steps li{counter-increment:s;display:grid;gap:8px;padding-top:20px;border-top:3px solid var(--green)}
-.steps li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--green);color:var(--ink);font-weight:800;font-size:18px;font-family:'Outfit',sans-serif}
-.steps strong{font-size:20px;letter-spacing:-0.01em}
-.steps span{color:var(--muted);max-width:44ch}
-.note{margin-top:36px;padding:16px 20px;background:var(--brand-soft);border-radius:14px;color:var(--brand-deep);font-weight:600;max-width:62ch}
-@media (min-width:800px){.steps{grid-template-columns:repeat(3,1fr);gap:40px}}
+.steps-sec{background:var(--soft)}
+.steps{display:grid;gap:16px;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;background:#fff;border-radius:var(--r);padding:26px;display:grid;gap:10px;align-content:start}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--green);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:700;font-size:20px}
+.steps strong{font-family:'Outfit',sans-serif;font-size:21px;font-weight:600}
+.steps span{color:var(--muted);max-width:40ch}
+.note{margin-top:24px;padding:16px 20px;background:#fff;border-radius:16px;color:var(--deep);font-weight:600;max-width:64ch}
+@media (min-width:860px){.steps{grid-template-columns:repeat(3,1fr)}}
 
-/* especialidades */
-.spec-list{display:grid;gap:0;border-top:1px solid var(--line)}
-.spec{display:grid;gap:10px;padding:28px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);transition:background-color .25s var(--ease)}
-.spec h3{font-size:clamp(24px,2.6vw,32px);font-weight:800}
-.spec p{color:var(--muted);max-width:56ch}
-.spec .go{justify-self:start;font-weight:700;color:var(--brand);padding:10px 18px;border-radius:999px;border:1.5px solid var(--green);white-space:nowrap;transition:background-color .25s var(--ease),color .25s var(--ease)}
-.spec .who{display:block;margin-top:8px;font-size:15px;color:var(--brand-deep);font-weight:600}
-@media (min-width:800px){.spec{grid-template-columns:300px 1fr auto;align-items:center;gap:32px}}
-@media (hover:hover){.spec:hover{background:var(--brand-soft)}.spec:hover .go{background:var(--green);color:var(--ink)}}
-.also-title{margin-top:44px;font-size:20px;font-weight:700}
-.also-list{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));margin:20px 0 0;padding:0;list-style:none}
-.also-list li{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;display:flex;flex-direction:column;gap:4px}
-.also-list strong{font-size:17px}
-.also-list span{font-size:15px;color:var(--muted)}
+/* especialidades: bento */
+.bento{display:grid;gap:16px}
+.sp{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:22px;min-height:210px;padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);text-decoration:none;color:var(--ink);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease)}
+.sp h3{font-size:clamp(21px,2vw,25px);font-weight:600;line-height:1.15}
+.sp p{margin-top:8px;color:var(--muted);font-size:15.5px;max-width:40ch}
+.sp .row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sp .go{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--soft);color:var(--brand);transition:background-color .25s var(--ease),color .25s var(--ease)}
+.sp-feature{background:linear-gradient(150deg,var(--deep),var(--brand));color:#fff;border-color:transparent;min-height:300px}
+.sp-feature h3{font-size:clamp(30px,3.4vw,42px)}
+.sp-feature p{color:var(--on-dark);font-size:17px;max-width:44ch}
+.sp-feature .go{background:var(--green);color:var(--ink)}
+.sp-docs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0;padding:0;list-style:none}
+.sp-docs li{display:flex;flex-direction:column;gap:8px}
+.sp-docs img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 12%;border-radius:16px;background:var(--soft)}
+.sp-docs strong{font-size:14.5px;line-height:1.25;color:#fff}
+.sp-docs span{font-size:13.5px;color:var(--on-dark-muted);font-variant-numeric:tabular-nums}
+.sp .who{display:block;margin-top:10px;font-size:14.5px;font-weight:600;color:var(--deep)}
+.sp-feature .who{color:var(--on-dark)}
+@media (hover:hover){.sp:hover{transform:translateY(-4px);box-shadow:var(--lift);border-color:var(--green)}.sp:hover .go{background:var(--green);color:var(--ink)}}
+@media (min-width:700px){.bento{grid-template-columns:repeat(2,1fr)}.sp-feature{grid-column:1/-1}}
+@media (min-width:1040px){.bento{grid-template-columns:repeat(4,1fr)}.sp-feature{grid-column:1/3;grid-row:1/3}}
 
 /* equipe */
-.lead-doc{display:grid;gap:28px;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:clamp(18px,3vw,32px);margin-bottom:24px}
-.lead-doc img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 20%;border-radius:20px;background:var(--brand-soft)}
+.lead-doc{display:grid;gap:28px;background:var(--surface);border:1px solid var(--line);border-radius:32px;padding:clamp(18px,3vw,32px);margin-bottom:28px}
+.lead-doc img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 20%;border-radius:22px;background:var(--soft)}
 .lead-doc .info{display:flex;flex-direction:column;justify-content:center;gap:14px}
-.lead-doc h3{font-size:clamp(26px,2.6vw,34px);font-weight:800}
-.tag{align-self:flex-start;font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px;background:var(--brand-soft);color:var(--brand-deep)}
+.lead-doc h3{font-size:clamp(28px,3vw,38px);font-weight:700}
+.tag{align-self:flex-start;font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;background:var(--soft);color:var(--deep)}
 .reg{font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
-.lead-doc p{color:var(--muted);max-width:60ch}
-@media (min-width:860px){.lead-doc{grid-template-columns:1fr 1fr;gap:40px}}
-.team{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));margin:0;padding:0;list-style:none}
+.lead-doc p{color:var(--muted);max-width:58ch}
+.lead-doc .info{max-width:70ch}
+.team{display:grid;gap:16px;grid-template-columns:repeat(2,1fr);margin:0;padding:0;list-style:none}
+@media (min-width:700px){.team{gap:18px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}}
 .doc{display:flex;flex-direction:column;gap:12px}
-.doc img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 15%;border-radius:16px;background:var(--brand-soft)}
-.doc h3{font-size:17px;font-weight:700;letter-spacing:-0.01em}
-.doc .role{font-size:15px;color:var(--brand-deep);font-weight:600;line-height:1.35}
+.doc img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:22px;background:var(--soft)}
+.doc h3{font-size:18px;font-weight:600}
+.doc .role{display:block;font-size:15px;color:var(--deep);font-weight:600;line-height:1.35}
 .doc .reg{display:block;margin-top:2px}
 
 /* faq */
 .faq-sec{background:var(--surface);border-top:1px solid var(--line)}
-.faq{max-width:820px;display:flex;flex-direction:column;gap:10px}
-.faq-group{margin:28px 0 2px;font-size:15px;font-weight:700;color:var(--brand-deep)}
+.faq{max-width:840px;display:flex;flex-direction:column;gap:10px}
+.faq-group{margin:28px 0 2px;font-size:15px;font-weight:700;color:var(--deep)}
 .faq-group:first-child{margin-top:0}
-.faq details{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:0 22px}
+.faq details{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:0 22px}
 .faq summary{cursor:pointer;padding:18px 0;font-weight:700;font-size:17px;line-height:1.4}
-.faq summary h3{display:inline;font-size:inherit;font-weight:inherit;letter-spacing:0}
+.faq summary h3{display:inline;font-size:inherit;font-weight:inherit;letter-spacing:0;font-family:'Manrope',sans-serif}
 .faq details[open]{background:#fff;border-color:var(--brand)}
 .faq details p{padding:0 0 20px;color:var(--muted);max-width:62ch}
 .disc{margin-top:24px;font-size:15px;color:var(--muted);max-width:62ch}
 
 /* contato */
-.contact{background:var(--brand-deep);color:var(--on-dark)}
+.contact{background:var(--deep);color:var(--on-dark);margin-top:0}
 .contact .wrap{display:grid;gap:40px}
-.contact h2{font-size:clamp(28px,3.4vw,42px);line-height:1.12;font-weight:800;color:#fff}
+.contact h2{font-size:clamp(30px,3.6vw,46px);line-height:1.1;font-weight:700;color:#fff}
 .facts{display:grid;gap:24px;margin:32px 0;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
 .facts dt{font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--on-dark-muted);margin-bottom:6px}
 .facts dd{margin:0}
 .contact a:not(.btn){color:#fff}
 .contact a:not(.btn):hover{color:#7BE5BE}
 .facts a{display:inline-flex;align-items:center;min-height:44px}
-.contact .btn-light{color:var(--brand-deep)}
-.map{position:relative;border-radius:24px;overflow:hidden;min-height:380px;background:#0B5568;display:flex;flex-direction:column}
-.map iframe{flex:1;width:100%;min-height:340px;border:0}
+.map{border-radius:28px;overflow:hidden;min-height:380px;background:#0B5568;display:flex;flex-direction:column}
+.map iframe{flex:1;width:100%;min-height:330px;border:0}
 .map-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#fff;color:var(--ink);padding:14px 18px;font-size:14px}
 .map-bar strong{display:block;font-size:15px}
 @media (min-width:960px){.contact .wrap{grid-template-columns:1fr 1fr;align-items:stretch;gap:56px}}
@@ -733,23 +762,27 @@ a.skip:hover{color:#fff}
 .foot img{height:42px;width:auto;margin-bottom:10px}
 .foot a{color:var(--on-dark);display:inline-flex;align-items:center;min-height:44px}
 .foot p{max-width:620px}
-.foot nav{display:flex;gap:18px;align-items:flex-start}
+.foot nav{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
 
-/* WhatsApp flutuante */
 .float{position:fixed;right:16px;bottom:16px;z-index:60;display:inline-flex;align-items:center;gap:8px;background:#0F7A3F;color:#fff;min-height:52px;padding:12px 18px;border-radius:999px;font-weight:800;text-decoration:none;box-shadow:0 10px 24px -10px rgba(0,0,0,.45);transition:background-color .25s var(--ease)}
 .float:hover{background:#0B6733;color:#fff}
-@media (max-width:899px){.float{display:none}}
+@media (max-width:959px){.float{display:none}}
 
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *{transition-duration:.01ms !important}
+.stat strong{white-space:nowrap}
+@media (max-width:959px){.doc-chip{left:50%;bottom:-26px;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 56px);padding:10px 14px;font-size:13px;text-align:left}.doc-chip span{font-size:12.5px;white-space:nowrap}}
+@media (max-width:699px){
+  .sp:not(.sp-feature){min-height:0;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;padding:16px 18px}
+  .sp:not(.sp-feature) .row{display:contents}
+  .sp:not(.sp-feature) .avs{order:-1}
+  .sp:not(.sp-feature) .avs li:nth-child(n+2){display:none}
 }
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms !important}}
 </style>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 <header class="top">
-  <div class="wrap">
+  <div class="wrap"><div class="bar">
     <a class="logo" href="#topo"><img src="assets/logo-urolaser-petroleo.png" alt="Urolaser Especialidades Médicas" width="890" height="255"></a>
     <nav class="nav" aria-label="Principal">
       <a href="#consulta">Primeira consulta</a>
@@ -772,34 +805,54 @@ a.skip:hover{color:#fff}
         </div>
       </details>
     </div>
-  </div>
+  </div></div>
 </header>
 <main id="conteudo">
 <section id="topo" class="hero">
   <div class="wrap">
-    <div>
-      <h1>Seu urologista em Vitória da Conquista e uma equipe completa para cuidar de você.</h1>
-      <p class="lead">Atendimento liderado pelo Dr. Alan Pascoal e por uma equipe multidisciplinar. Consultas detalhadas e procedimentos a laser minimamente invasivos quando indicados.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.18-3.1.82.83-3.02-.2-.31A8.1 8.1 0 0 1 12.04 3.8Zm-3.2 4.2c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.17 1.78 2.83 4.4 3.85 2.17.85 2.62.68 3.09.64.47-.04 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.23-.17-.49-.3-.26-.13-1.52-.75-1.76-.84-.23-.09-.4-.13-.58.13-.17.26-.66.84-.81 1-.15.18-.3.2-.56.07-.26-.13-1.1-.4-2.1-1.29-.77-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.18.04-.33-.02-.46-.07-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.5Z"/></svg>Agendar pelo WhatsApp</a>
-        <a class="btn btn-ghost" href="#especialidades">Ver especialidades</a>
+    <div class="hero-panel">
+      <div>
+        <h1>Seu urologista em Vitória da Conquista e uma equipe completa para cuidar de você.</h1>
+        <p class="lead">Atendimento liderado pelo Dr. Alan Pascoal e por uma equipe multidisciplinar. Consultas detalhadas e procedimentos a laser minimamente invasivos quando indicados.</p>
+        <div class="hero-cta">
+          <a class="btn btn-white" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.18-3.1.82.83-3.02-.2-.31A8.1 8.1 0 0 1 12.04 3.8Zm-3.2 4.2c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.17 1.78 2.83 4.4 3.85 2.17.85 2.62.68 3.09.64.47-.04 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.23-.17-.49-.3-.26-.13-1.52-.75-1.76-.84-.23-.09-.4-.13-.58.13-.17.26-.66.84-.81 1-.15.18-.3.2-.56.07-.26-.13-1.1-.4-2.1-1.29-.77-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.18.04-.33-.02-.46-.07-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.5Z"/></svg>Agendar pelo WhatsApp</a>
+          <a class="btn btn-outline" href="#especialidades">Ver especialidades</a>
+        </div>
       </div>
-      <p class="creds">Dr. Alan Pascoal · CRM-BA 27945 · RQE 12941/13027</p>
+      <div class="hero-doc">
+        <div class="ring" aria-hidden="true"></div>
+        <figure>
+          <img src="assets/equipe/alan-pascoal.webp" alt="Dr. Alan Pascoal, urologista e diretor técnico da Urolaser" width="1080" height="1350" fetchpriority="high">
+        </figure>
+        <div class="doc-chip"><strong>Dr. Alan Pascoal</strong>Urologista · Diretor Técnico<span>CRM-BA 27945 · RQE 12941 / 13027</span></div>
+      </div>
     </div>
-    <figure class="hero-photo">
-      <img src="assets/equipe/alan-pascoal.webp" alt="Dr. Alan Pascoal, urologista e diretor técnico da Urolaser" width="1080" height="1350" fetchpriority="high">
-      <figcaption><strong>Dr. Alan Pascoal</strong>Urologista · Diretor Técnico</figcaption>
-    </figure>
+    <div class="chips">
+      <div class="chip"><p class="big">Seg a Qui, 07h–18h</p><p class="sub">Sexta, 07h–17h</p></div>
+      <div class="chip"><ul class="avs" aria-hidden="true"><li><img src="assets/equipe/dayana-feitoza.webp" alt="" width="1122" height="1402" loading="lazy"></li><li><img src="assets/equipe/indira-baqueiro.webp" alt="" width="1122" height="1402" loading="lazy"></li><li><img src="assets/equipe/antonio-carlos.webp" alt="" width="1122" height="1402" loading="lazy"></li><li><img src="assets/equipe/maryse-vanessa.webp" alt="" width="1122" height="1402" loading="lazy"></li><li><img src="assets/equipe/iuri-vasconcelos.webp" alt="" width="1122" height="1402" loading="lazy"></li></ul><p class="big">11 profissionais</p><p class="sub">Urologia, ginecologia, psiquiatria e mais</p></div>
+      <div class="chip"><p class="big">Recreio, 2º andar</p><a class="link" href="https://www.google.com/maps/dir/?api=1&destination=Av.+Ot%C3%A1vio+Santos,+395,+Recreio,+Vit%C3%B3ria+da+Conquista+-+BA" target="_blank" rel="noopener">Traçar rota <svg class="arr" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+    </div>
+    <div class="stats" id="numeros">
+      <div class="stat"><strong>9</strong><span>anos de história</span></div>
+      <div class="stat"><strong>11</strong><span>profissionais</span></div>
+      <div class="stat"><strong>9</strong><span>áreas de atendimento</span></div>
+    </div>
   </div>
 </section>
 
-<div class="strip">
-  <div class="wrap">
-    <span>Seg a Qui 07h–18h · Sexta 07h–17h</span>
-    <span>Recreio, 2º andar, Vitória da Conquista - BA</span>
-    <a href="tel:+557734277267">Ligar (77) 3427-7267</a>
+<section id="sobre" class="section">
+  <div class="wrap about">
+    <div>
+      <div class="sec-head" style="margin-bottom:20px"><h2>Clínica de urologia e saúde integrada em Vitória da Conquista.</h2></div>
+      <p class="about-lead"><strong>A Urolaser Especialidades Médicas é uma clínica de urologia e saúde integrada em Vitória da Conquista (BA)</strong>, na Av. Otávio Santos, 395, Sala 202. Reúne urologia, cirurgia pediátrica, ginecologia, coloproctologia, endocrinologia, psiquiatria, psicologia, nutrição e clínica médica, com procedimentos a laser minimamente invasivos. O atendimento é liderado pelo urologista Dr. Alan Pascoal (CRM-BA 27945, RQE 12941/13027).</p>
+    </div>
+    <ul class="points">
+      <li><strong>Atendimento acolhedor</strong><span>Consultas detalhadas e empáticas, com tempo para ouvir você.</span></li>
+      <li><strong>Equipe no mesmo lugar</strong><span>Nove áreas de atendimento conversam entre si e acompanham você de perto.</span></li>
+      <li><strong>Tecnologia a laser</strong><span>Procedimentos minimamente invasivos, com indicação definida pelo médico em consulta.</span></li>
+    </ul>
   </div>
-</div>
+</section>
 
 <section id="consulta" class="section steps-sec">
   <div class="wrap">
@@ -813,47 +866,48 @@ a.skip:hover{color:#fff}
   </div>
 </section>
 
-<section id="sobre" class="section">
-  <div class="wrap">
-    <div class="sec-head"><h2>Clínica de urologia e saúde integrada em Vitória da Conquista.</h2></div>
-    <p class="about-lead"><strong>A Urolaser Especialidades Médicas é uma clínica de urologia e saúde integrada em Vitória da Conquista (BA)</strong>, na Av. Otávio Santos, 395, Sala 202. Reúne urologia, ginecologia, coloproctologia, endocrinologia, psiquiatria, psicologia e nutrição, com procedimentos a laser minimamente invasivos. O atendimento é liderado pelo urologista Dr. Alan Pascoal (CRM-BA 27945, RQE 12941/13027).</p>
-    <ul class="points">
-      <li><strong>Atendimento acolhedor</strong><span>Consultas detalhadas e empáticas, com tempo para ouvir você.</span></li>
-      <li><strong>Equipe no mesmo lugar</strong><span>Urologia, ginecologia, coloproctologia, endocrinologia, psiquiatria, psicologia e nutrição conversam entre si e acompanham você de perto.</span></li>
-      <li><strong>Tecnologia a laser</strong><span>Procedimentos minimamente invasivos, com indicação definida pelo médico em consulta.</span></li>
-    </ul>
-  </div>
-</section>
-
 <section id="especialidades" class="section">
   <div class="wrap">
-    <div class="sec-head"><h2>Especialidades: urologia, ginecologia e coloproctologia.</h2></div>
-    <div class="spec-list">
-      <a class="spec" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta%20de%20Urologia." target="_blank" rel="noopener">
-        <h3>Urologia</h3>
-        <p>Saúde da próstata, saúde sexual masculina (andrologia), cálculo renal, urologia infantil e cirurgias a laser minimamente invasivas.<span class="who">Com Dr. Alan Pascoal, Dr. Danilo Andrade e Dr. Antônio Carlos</span></p>
-        <span class="go">Agendar avaliação →</span>
+    <div class="sec-head"><h2>Especialidades: urologia, ginecologia e coloproctologia.</h2><p>Toque em uma especialidade para agendar pelo WhatsApp.</p></div>
+    <div class="bento">
+      <a class="sp sp-feature" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta%20de%20Urologia." target="_blank" rel="noopener" aria-label="Urologia: agendar pelo WhatsApp">
+        <div><h3>Urologia</h3><p>Saúde da próstata, saúde sexual masculina (andrologia), cálculo renal, urologia infantil e cirurgias a laser minimamente invasivas.</p></div>
+        <ul class="sp-docs"><li><img src="assets/equipe/alan-pascoal.webp" alt="Dr. Alan Pascoal" width="1080" height="1350" loading="lazy"><strong>Dr. Alan Pascoal</strong><span>CRM-BA 27945</span></li><li><img src="assets/equipe/danilo-andrade.webp" alt="Dr. Danilo Andrade" width="1122" height="1402" loading="lazy"><strong>Dr. Danilo Andrade</strong><span>CRM 25125</span></li><li><img src="assets/equipe/antonio-carlos.webp" alt="Dr. Antônio Carlos" width="1122" height="1402" loading="lazy"><strong>Dr. Antônio Carlos</strong><span>CRM 31794</span></li></ul>
+        <div class="row" style="justify-content:flex-end"><span class="go"><svg class="arr" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
       </a>
-      <a class="spec" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta%20de%20Ginecologia." target="_blank" rel="noopener">
-        <h3>Ginecologia</h3>
-        <p>Saúde integral feminina e prevenção.<span class="who">Com Dra. Dayana Feitoza</span></p>
-        <span class="go">Agendar avaliação →</span>
+      <a class="sp" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta%20de%20Ginecologia." target="_blank" rel="noopener" aria-label="Ginecologia: agendar pelo WhatsApp">
+        <div><h3>Ginecologia</h3><p>Saúde integral feminina e prevenção.</p><span class="who">Com Dra. Dayana Feitoza</span></div>
+        <div class="row"><ul class="avs" aria-hidden="true"><li><img src="assets/equipe/dayana-feitoza.webp" alt="" width="1122" height="1402" loading="lazy"></li></ul><span class="go"><svg class="arr" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
       </a>
-      <a class="spec" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta%20de%20Coloproctologia." target="_blank" rel="noopener">
-        <h3>Coloproctologia</h3>
-        <p>Patologias de cólon e reto, com procedimentos a laser.<span class="who">Com Dra. Indira Baqueiro</span></p>
-        <span class="go">Agendar avaliação →</span>
+      <a class="sp" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta%20de%20Coloproctologia." target="_blank" rel="noopener" aria-label="Coloproctologia: agendar pelo WhatsApp">
+        <div><h3>Coloproctologia</h3><p>Patologias de cólon e reto, com procedimentos a laser.</p><span class="who">Com Dra. Indira Baqueiro</span></div>
+        <div class="row"><ul class="avs" aria-hidden="true"><li><img src="assets/equipe/indira-baqueiro.webp" alt="" width="1122" height="1402" loading="lazy"></li></ul><span class="go"><svg class="arr" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      </a>
+      <a class="sp" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta%20de%20Cirurgia%20pedi%C3%A1trica." target="_blank" rel="noopener" aria-label="Cirurgia pediátrica: agendar pelo WhatsApp">
+        <div><h3>Cirurgia pediátrica</h3><p>Cirurgia para crianças, com avaliação em consulta.</p><span class="who">Com Dr. Luciano Martins</span></div>
+        <div class="row"><ul class="avs" aria-hidden="true"><li><img src="assets/equipe/luciano-martins.webp" alt="" width="1122" height="1402" loading="lazy"></li></ul><span class="go"><svg class="arr" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      </a>
+      <a class="sp" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta%20de%20Endocrinologia." target="_blank" rel="noopener" aria-label="Endocrinologia: agendar pelo WhatsApp">
+        <div><h3>Endocrinologia</h3><p>Endocrinologia e metabologia.</p><span class="who">Com Dra. Maryse Vannessa</span></div>
+        <div class="row"><ul class="avs" aria-hidden="true"><li><img src="assets/equipe/maryse-vanessa.webp" alt="" width="1122" height="1402" loading="lazy"></li></ul><span class="go"><svg class="arr" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      </a>
+      <a class="sp" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta%20de%20Psiquiatria." target="_blank" rel="noopener" aria-label="Psiquiatria: agendar pelo WhatsApp">
+        <div><h3>Psiquiatria</h3><p>Acompanhamento médico em saúde mental.</p><span class="who">Com Dr. Iuri Vasconcelos</span></div>
+        <div class="row"><ul class="avs" aria-hidden="true"><li><img src="assets/equipe/iuri-vasconcelos.webp" alt="" width="1122" height="1402" loading="lazy"></li></ul><span class="go"><svg class="arr" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      </a>
+      <a class="sp" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta%20de%20Psicologia." target="_blank" rel="noopener" aria-label="Psicologia: agendar pelo WhatsApp">
+        <div><h3>Psicologia</h3><p>Psicologia e neuropsicologia.</p><span class="who">Com Ione Freitas</span></div>
+        <div class="row"><ul class="avs" aria-hidden="true"><li><img src="assets/equipe/ione-freitas.webp" alt="" width="1122" height="1402" loading="lazy"></li></ul><span class="go"><svg class="arr" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      </a>
+      <a class="sp" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta%20de%20Nutri%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Nutrição clínica: agendar pelo WhatsApp">
+        <div><h3>Nutrição clínica</h3><p>Acompanhamento nutricional.</p><span class="who">Com Dra. Lívia Vasconcelos</span></div>
+        <div class="row"><ul class="avs" aria-hidden="true"><li><img src="assets/equipe/livia-vasconcelos.webp" alt="" width="1122" height="1402" loading="lazy"></li></ul><span class="go"><svg class="arr" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      </a>
+      <a class="sp" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta%20de%20Cl%C3%ADnica%20m%C3%A9dica." target="_blank" rel="noopener" aria-label="Clínica médica: agendar pelo WhatsApp">
+        <div><h3>Clínica médica</h3><p>Clínica geral e manejo de obesidade.</p><span class="who">Com Dra. Thamiris Carvalho</span></div>
+        <div class="row"><ul class="avs" aria-hidden="true"><li><img src="assets/equipe/thamiris-carvalho.webp" alt="" width="1122" height="1402" loading="lazy"></li></ul><span class="go"><svg class="arr" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
       </a>
     </div>
-    <h3 class="also-title">Também na Urolaser</h3>
-    <ul class="also-list">
-      <li><strong>Endocrinologia e metabologia</strong><span>Dra. Maryse Vannessa</span></li>
-      <li><strong>Psiquiatria</strong><span>Dr. Iuri Vasconcelos</span></li>
-      <li><strong>Psicologia e neuropsicologia</strong><span>Ione Freitas</span></li>
-      <li><strong>Cirurgia pediátrica</strong><span>Dr. Luciano Martins</span></li>
-      <li><strong>Nutrição clínica</strong><span>Dra. Lívia Vasconcelos</span></li>
-      <li><strong>Clínica médica e obesidade</strong><span>Dra. Thamiris Carvalho</span></li>
-    </ul>
   </div>
 </section>
 
@@ -861,11 +915,9 @@ a.skip:hover{color:#fff}
   <div class="wrap">
     <div class="sec-head"><h2>Corpo clínico: equipe multidisciplinar, um só cuidado.</h2></div>
     <div class="lead-doc">
-      <img src="assets/equipe/alan-pascoal.webp" alt="Dr. Alan Pascoal, urologista, CRM-BA 27945" width="1080" height="1350" loading="lazy">
       <div class="info">
-        <span class="tag">Diretor Técnico</span>
         <h3>Dr. Alan Pascoal</h3>
-        <span class="reg">CRM-BA 27945 · RQE 12941 / 13027</span>
+        <span class="reg">Urologista e diretor técnico · CRM-BA 27945 · RQE 12941 / 13027</span>
         <p>Urologista, com residência no Hospital Federal do Andaraí/Ipanema (RJ) e observership em cirurgia robótica no Memorial Sloan Kettering Cancer Center, em Nova York (período de observação e acompanhamento de cirurgias). Lidera a Urolaser com foco em saúde da próstata, cirurgia a laser e procedimentos minimamente invasivos.</p>
         <a class="btn btn-primary" style="align-self:flex-start" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.18-3.1.82.83-3.02-.2-.31A8.1 8.1 0 0 1 12.04 3.8Zm-3.2 4.2c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.17 1.78 2.83 4.4 3.85 2.17.85 2.62.68 3.09.64.47-.04 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.23-.17-.49-.3-.26-.13-1.52-.75-1.76-.84-.23-.09-.4-.13-.58.13-.17.26-.66.84-.81 1-.15.18-.3.2-.56.07-.26-.13-1.1-.4-2.1-1.29-.77-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.18.04-.33-.02-.46-.07-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.5Z"/></svg>Agendar com Dr. Alan</a>
       </div>
