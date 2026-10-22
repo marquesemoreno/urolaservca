@@ -778,8 +778,8 @@ a.skip:hover{color:#fff}
 <section id="topo" class="hero">
   <div class="wrap">
     <div>
-      <h1>Seu urologista em Vitória da Conquista, com acolhimento e sigilo.</h1>
-      <p class="lead">Atendimento liderado pelo Dr. Alan Pascoal e por uma equipe multidisciplinar. Consultas detalhadas e sigilosas, e procedimentos a laser minimamente invasivos quando indicados.</p>
+      <h1>Seu urologista em Vitória da Conquista e uma equipe completa para cuidar de você.</h1>
+      <p class="lead">Atendimento liderado pelo Dr. Alan Pascoal e por uma equipe multidisciplinar. Consultas detalhadas e procedimentos a laser minimamente invasivos quando indicados.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.18-3.1.82.83-3.02-.2-.31A8.1 8.1 0 0 1 12.04 3.8Zm-3.2 4.2c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.17 1.78 2.83 4.4 3.85 2.17.85 2.62.68 3.09.64.47-.04 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.23-.17-.49-.3-.26-.13-1.52-.75-1.76-.84-.23-.09-.4-.13-.58.13-.17.26-.66.84-.81 1-.15.18-.3.2-.56.07-.26-.13-1.1-.4-2.1-1.29-.77-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.18.04-.33-.02-.46-.07-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.5Z"/></svg>Agendar pelo WhatsApp</a>
         <a class="btn btn-ghost" href="#especialidades">Ver especialidades</a>
@@ -818,7 +818,7 @@ a.skip:hover{color:#fff}
     <div class="sec-head"><h2>Clínica de urologia e saúde integrada em Vitória da Conquista.</h2></div>
     <p class="about-lead"><strong>A Urolaser Especialidades Médicas é uma clínica de urologia e saúde integrada em Vitória da Conquista (BA)</strong>, na Av. Otávio Santos, 395, Sala 202. Reúne urologia, ginecologia, coloproctologia, endocrinologia, psiquiatria, psicologia e nutrição, com procedimentos a laser minimamente invasivos. O atendimento é liderado pelo urologista Dr. Alan Pascoal (CRM-BA 27945, RQE 12941/13027).</p>
     <ul class="points">
-      <li><strong>Acolhimento e sigilo</strong><span>Consultas detalhadas e empáticas, com a privacidade que o assunto pede.</span></li>
+      <li><strong>Atendimento acolhedor</strong><span>Consultas detalhadas e empáticas, com tempo para ouvir você.</span></li>
       <li><strong>Equipe no mesmo lugar</strong><span>Urologia, ginecologia, coloproctologia, endocrinologia, psiquiatria, psicologia e nutrição conversam entre si e acompanham você de perto.</span></li>
       <li><strong>Tecnologia a laser</strong><span>Procedimentos minimamente invasivos, com indicação definida pelo médico em consulta.</span></li>
     </ul>
@@ -1050,6 +1050,15 @@ a.skip:hover{color:#fff}
 m.addEventListener('click',function(e){if(e.target.closest('.menu-list a'))m.removeAttribute('open')});
 document.addEventListener('click',function(e){if(!m.contains(e.target))m.removeAttribute('open')});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')m.removeAttribute('open')});})();
+</script>
+<script>
+(function(){try{
+var q=new URLSearchParams(location.search),src=(q.get('utm_source')||q.get('origem')||'').toLowerCase();
+var nomes={instagram:'Instagram',ig:'Instagram',facebook:'Facebook',google:'Google'},nome=nomes[src];
+if(!nome)return;
+document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function(a){
+a.href=a.href.replace('Vim%20pelo%20site','Vim%20pelo%20'+encodeURIComponent(nome));});
+}catch(e){}})();
 </script>
 </body>
 </html>

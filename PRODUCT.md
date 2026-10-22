@@ -24,7 +24,7 @@ Marketing and booking site for Urolaser Especialidades Médicas (URO LASER LTDA,
 
 ## Positioning
 
-Urology, gynecology, coloproctology, endocrinology, psychology and nutrition under one roof, with laser minimally invasive procedures, led by a urologist trained at Hospital Federal do Andaraí/Ipanema (RJ) with a robotic-surgery observership at Memorial Sloan Kettering (NY). Confirmed differentiators: multidisciplinary team in the same place, the director's training, welcoming and confidential care, laser surgery.
+Urology, gynecology, coloproctology, endocrinology, psychology and nutrition under one roof, with laser minimally invasive procedures, led by a urologist trained at Hospital Federal do Andaraí/Ipanema (RJ) with a robotic-surgery observership at Memorial Sloan Kettering (NY). Confirmed differentiators: multidisciplinary team in the same place, the director's training, welcoming care, laser surgery. The client asked that confidentiality ("sigilo") NOT be a headline message; it stays only in the FAQ and privacy pages.
 
 ## Operating Context
 
@@ -37,9 +37,9 @@ Urology, gynecology, coloproctology, endocrinology, psychology and nutrition und
 ## Capabilities and Constraints
 
 - Medical advertising must follow CFM rules: no promise of results, no before/after, no diagnosis, professional registration shown next to every name.
-- Professionals (official roster "Corpo Clínico 2026", spreadsheet in the client folder; its CPFs must never be published): Dr. Alan Pascoal (urology), Dr. Antônio Carlos (urology), Dr. Danilo Andrade (urology), Dra. Dayana Feitoza (gynecology), Dra. Indira Baqueiro (proctology), Dr. Iuri Vasconcelos (psychiatry, CRM 28678), Dr. Luciano Martins (pediatric surgery, CRM 15183, RQE 7732), Dra. Maryse Vannessa (endocrinology), Dra. Thamiris Carvalho (general practice), Dra. Lívia Vasconcelos (nutrition, CRN 7628), Ione Freitas (psychology). Standardized portraits delivered on 2026-10-21 (files in SITE/FOTOS MÉDICOS are named per professional). Dr. Jessé Alves has a portrait but is not in the roster: specialty and registration still needed before he can be shown.
+- Professionals (official roster "Corpo Clínico 2026", spreadsheet in the client folder; its CPFs must never be published): Dr. Alan Pascoal (urology), Dr. Antônio Carlos (urology), Dr. Danilo Andrade (urology), Dra. Dayana Feitoza (gynecology), Dra. Indira Baqueiro (proctology), Dr. Iuri Vasconcelos (psychiatry, CRM 28678), Dr. Luciano Martins (pediatric surgery, CRM 15183, RQE 7732), Dra. Maryse Vannessa (endocrinology), Dra. Thamiris Carvalho (general practice), Dra. Lívia Vasconcelos (nutrition, CRN 7628), Ione Freitas (psychology). Standardized portraits delivered on 2026-10-21 (files in SITE/FOTOS MÉDICOS are named per professional). Dr. Jessé Alves has a portrait but is not in the roster: the client decided to leave him off the site.
 - Insurance: the clinic currently accepts only Cassi. The client asked to keep insurance OUT of the site for now: do not name any plan on the pages or in the FAQ until they say otherwise.
-- Open decisions: Dr. Jessé Alves specialty and CRM/RQE. Maryse is spelled Vannessa (roster, photo file and the clinic FAQ draft; Instagram posts say Vanessa).
+- Open decisions: none on the team; domain urolaservca.com.br is being moved to Cloudflare DNS. Maryse is spelled Vannessa (roster, photo file and the clinic FAQ draft; Instagram posts say Vanessa).
 
 ## Brand Commitments
 
