@@ -769,9 +769,8 @@ a.skip:hover{color:#fff}
 .foot p{max-width:620px}
 .foot nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
 .foot nav span{display:inline-flex;align-items:center;min-height:44px}
-.foot .credit{width:100%;margin:0;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);font-size:14px;color:var(--on-dark-muted)}
-.foot .credit a{display:inline;min-height:0;color:var(--on-dark-muted);text-underline-offset:3px}
-.foot .credit a:hover{color:#fff}
+.foot nav span a{display:inline;min-height:0;color:inherit;text-underline-offset:3px}
+.foot nav span a:hover{color:#fff}
 
 .float{position:fixed;right:16px;bottom:16px;z-index:60;display:inline-flex;align-items:center;gap:8px;background:#0F7A3F;color:#fff;min-height:52px;padding:12px 18px;border-radius:999px;font-weight:800;text-decoration:none;box-shadow:0 10px 24px -10px rgba(0,0,0,.45);transition:background-color .25s var(--ease)}
 .float:hover{background:#0B6733;color:#fff}
@@ -785,11 +784,36 @@ a.skip:hover{color:#fff}
   .sp:not(.sp-feature) .avs{order:-1}
   .sp:not(.sp-feature) .avs li:nth-child(n+2){display:none}
 }
+
+/* campanha Novembro Azul (some sozinha em 01/12/2026) */
+.nb-fim .nb{display:none}
+.nb-bar{background:#06295A;color:#fff;text-align:center;font-size:15px;line-height:1.3}
+.nb-bar .wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2px 14px;padding-top:2px;padding-bottom:2px}
+.nb-bar a{display:inline-flex;align-items:center;gap:6px;min-height:44px;color:#7FE0FF;font-weight:700;text-underline-offset:3px}
+.nb-bar a:hover{color:#fff}
+.nb-sec{padding:clamp(40px,5vw,72px) 0 0}
+.nb-panel{background:linear-gradient(140deg,#06295A,#0A3F7E);color:#fff;border-radius:36px;padding:clamp(24px,4vw,56px);overflow:hidden}
+.nb-head{max-width:760px}
+.nb-head h2{font-size:clamp(30px,3.8vw,48px);line-height:1.08;font-weight:700;color:#fff}
+.nb-head h2 em{font-style:normal;color:#7FE0FF}
+.nb-head p{margin-top:16px;color:#DCE9F8;font-size:18px;max-width:58ch}
+.nb-strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin:28px calc(-1*clamp(24px,4vw,56px)) 0;padding:0 clamp(24px,4vw,56px) 12px;scrollbar-width:thin;scrollbar-color:#7FE0FF transparent;scroll-padding-inline:clamp(24px,4vw,56px)}
+.nb-strip img{flex:none;height:clamp(220px,30vw,400px);width:auto;border-radius:20px;scroll-snap-align:start}
+.nb-strip:focus-visible{outline-offset:-3px}
+.nb-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:20px}
+.btn-cyan{background:#7FE0FF;color:#06295A}
+.btn-cyan:hover{background:#B8EEFF;color:#06295A}
+.nb-arrows{display:flex;gap:8px;margin-left:auto}
+.nb-arrows button{width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer;transition:background-color .25s var(--ease)}
+.nb-arrows button:hover{background:rgba(255,255,255,.14)}
+.nb-note{margin-top:16px;font-size:14px;color:#BBD3EE;max-width:62ch}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms !important}}
 </style>
+<script>if(Date.now()>=new Date('2026-12-01T00:00:00-03:00').getTime())document.documentElement.classList.add('nb-fim')</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="nb-bar nb"><div class="wrap"><span>Novembro Azul: converse com um urologista sobre a sua saúde.</span><a href="#novembro-azul">Conheça a campanha</a></div></div>
 <header class="top">
   <div class="wrap"><div class="bar">
     <a class="logo" href="#topo"><img src="assets/logo-urolaser-petroleo.png" alt="Urolaser Especialidades Médicas" width="890" height="255"></a>
@@ -845,6 +869,27 @@ a.skip:hover{color:#fff}
       <div class="stat"><strong>9</strong><span>anos de história</span></div>
       <div class="stat"><strong>11</strong><span>profissionais</span></div>
       <div class="stat"><strong>9</strong><span>áreas de atendimento</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="novembro-azul" class="nb-sec nb">
+  <div class="wrap">
+    <div class="nb-panel">
+      <div class="nb-head">
+        <h2>Novembro Azul: seja o <em>protagonista</em> da sua história.</h2>
+        <p>Novembro é o mês de falar sobre a saúde do homem e sobre prevenção. Consultas e exames periódicos ajudam a cuidar da saúde com mais tranquilidade. Converse com um urologista sobre o melhor momento de começar o seu acompanhamento.</p>
+      </div>
+      <div class="nb-strip" id="nb-strip" tabindex="0" role="region" aria-label="Banners da campanha Novembro Azul">
+        <img src="assets/novembro-azul/banner-1.webp" alt="Banner do Novembro Azul: Sua saúde merece estar sempre em cena. Dr. Alan Pascoal, urologista, CRM-BA 27945, RQE 12941" width="1600" height="1383" loading="eager">
+        <img src="assets/novembro-azul/banner-2.webp" alt="Banner do Novembro Azul 2026: Urolaser apresenta uma história de cuidado. Protagonista: você. Direção: suas escolhas. Cena: prevenção. Próximo take: cuidar da saúde" width="1600" height="895" loading="lazy">
+        <img src="assets/novembro-azul/banner-3.webp" alt="Banner do Novembro Azul: seja o protagonista da sua história" width="1600" height="803" loading="lazy">
+      </div>
+      <div class="nb-actions">
+        <a class="btn btn-cyan" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta%20de%20Urologia%20(Novembro%20Azul)." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.18-3.1.82.83-3.02-.2-.31A8.1 8.1 0 0 1 12.04 3.8Zm-3.2 4.2c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.17 1.78 2.83 4.4 3.85 2.17.85 2.62.68 3.09.64.47-.04 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.23-.17-.49-.3-.26-.13-1.52-.75-1.76-.84-.23-.09-.4-.13-.58.13-.17.26-.66.84-.81 1-.15.18-.3.2-.56.07-.26-.13-1.1-.4-2.1-1.29-.77-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.18.04-.33-.02-.46-.07-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.5Z"/></svg>Agendar consulta de Urologia</a>
+        <div class="nb-arrows"><button type="button" id="nb-prev" aria-label="Banner anterior"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button><button type="button" id="nb-next" aria-label="Próximo banner"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button></div>
+      </div>
+      <p class="nb-note">Conteúdo informativo, sem caráter de diagnóstico ou promessa de resultado. Não substitui consulta médica.</p>
     </div>
   </div>
 </section>
@@ -1112,9 +1157,8 @@ a.skip:hover{color:#fff}
     <nav aria-label="Rodapé">
       <a href="/privacidade">Privacidade</a>
       <a href="/termos">Termos</a>
-      <span>© 2026 URO LASER LTDA · CNPJ 27.839.278/0001-03</span>
+      <span>© 2026 URO LASER LTDA · CNPJ 27.839.278/0001-03 · Site por <a href="https://www.tivdc.com.br/" target="_blank" rel="noopener">TIVDC</a></span>
     </nav>
-    <p class="credit">Site por <a href="https://www.tivdc.com.br/" target="_blank" rel="noopener">TIVDC</a></p>
   </div>
 </footer>
 <a class="float" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta." target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.18-3.1.82.83-3.02-.2-.31A8.1 8.1 0 0 1 12.04 3.8Zm-3.2 4.2c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.17 1.78 2.83 4.4 3.85 2.17.85 2.62.68 3.09.64.47-.04 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.23-.17-.49-.3-.26-.13-1.52-.75-1.76-.84-.23-.09-.4-.13-.58.13-.17.26-.66.84-.81 1-.15.18-.3.2-.56.07-.26-.13-1.1-.4-2.1-1.29-.77-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.18.04-.33-.02-.46-.07-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.5Z"/></svg>WhatsApp</a>
@@ -1122,6 +1166,13 @@ a.skip:hover{color:#fff}
 (function(){var b=document.querySelector('.map-btn');if(!b)return;
 b.addEventListener('click',function(){var f=document.querySelector('.map-frame'),i=document.createElement('iframe');
 i.title='Mapa da Urolaser';i.src=f.dataset.src;i.referrerPolicy='no-referrer-when-downgrade';f.textContent='';f.appendChild(i);});})();
+</script>
+<script>
+(function(){var st=document.getElementById('nb-strip');if(!st)return;
+var red=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function go(d){st.scrollBy({left:d*st.clientWidth*.8,behavior:red?'auto':'smooth'})}
+document.getElementById('nb-prev').addEventListener('click',function(){go(-1)});
+document.getElementById('nb-next').addEventListener('click',function(){go(1)});})();
 </script>
 <script>
 (function(){var m=document.querySelector('.menu');if(!m)return;
