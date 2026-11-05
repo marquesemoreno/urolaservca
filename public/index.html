@@ -750,6 +750,8 @@ a.skip:hover{color:#fff}
 .contact a:not(.btn){color:#fff}
 .contact a:not(.btn):hover{color:#7BE5BE}
 .facts a{display:inline-flex;align-items:center;min-height:44px}
+.facts .ln{display:flex;gap:10px}
+.facts .si{flex:none;opacity:.9}
 .map{border-radius:28px;overflow:hidden;min-height:380px;background:#0B5568;display:flex;flex-direction:column}
 .map-frame{flex:1;min-height:330px;display:grid;place-items:center;text-align:center}
 .map-frame iframe{width:100%;height:100%;min-height:330px;border:0;display:block}
@@ -767,6 +769,9 @@ a.skip:hover{color:#fff}
 .foot p{max-width:620px}
 .foot nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
 .foot nav span{display:inline-flex;align-items:center;min-height:44px}
+.foot .credit{width:100%;margin:0;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);font-size:14px;color:var(--on-dark-muted)}
+.foot .credit a{display:inline;min-height:0;color:var(--on-dark-muted);text-underline-offset:3px}
+.foot .credit a:hover{color:#fff}
 
 .float{position:fixed;right:16px;bottom:16px;z-index:60;display:inline-flex;align-items:center;gap:8px;background:#0F7A3F;color:#fff;min-height:52px;padding:12px 18px;border-radius:999px;font-weight:800;text-decoration:none;box-shadow:0 10px 24px -10px rgba(0,0,0,.45);transition:background-color .25s var(--ease)}
 .float:hover{background:#0B6733;color:#fff}
@@ -1073,7 +1078,11 @@ a.skip:hover{color:#fff}
         <div><dt>Endereço</dt><dd>Av. Otávio Santos, 395, Sala 202 — Centro Médico Dr. Altamirando da Costa Lima (2º andar), Recreio, Vitória da Conquista/BA.</dd></div>
         <div><dt>Horários</dt><dd>Seg a Qui: 07h–18h<br>Sexta: 07h–17h</dd></div>
         <div><dt>Telefone / WhatsApp</dt><dd><a href="tel:+557734277267">(77) 3427-7267</a><br><a href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta." target="_blank" rel="noopener">(77) 99925-7550</a></dd></div>
-        <div><dt>E-mail e redes</dt><dd><a href="mailto:urolaservca@gmail.com">urolaservca@gmail.com</a><br><a href="https://www.instagram.com/urolaservca" target="_blank" rel="noopener">@urolaservca</a> · <a href="https://www.facebook.com/urolaservca/" target="_blank" rel="noopener">Facebook</a></dd></div>
+        <div><dt>E-mail e redes</dt><dd>
+          <a class="ln" href="mailto:urolaservca@gmail.com"><svg class="si" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>urolaservca@gmail.com</a>
+          <a class="ln" href="https://www.instagram.com/urolaservca" target="_blank" rel="noopener"><svg class="si" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@urolaservca</a>
+          <a class="ln" href="https://www.facebook.com/urolaservca/" target="_blank" rel="noopener"><svg class="si" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
+        </dd></div>
       </dl>
       <a class="btn btn-green" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.18-3.1.82.83-3.02-.2-.31A8.1 8.1 0 0 1 12.04 3.8Zm-3.2 4.2c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.17 1.78 2.83 4.4 3.85 2.17.85 2.62.68 3.09.64.47-.04 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.23-.17-.49-.3-.26-.13-1.52-.75-1.76-.84-.23-.09-.4-.13-.58.13-.17.26-.66.84-.81 1-.15.18-.3.2-.56.07-.26-.13-1.1-.4-2.1-1.29-.77-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.18.04-.33-.02-.46-.07-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.5Z"/></svg>Agendar pelo WhatsApp</a>
     </div>
@@ -1105,6 +1114,7 @@ a.skip:hover{color:#fff}
       <a href="/termos">Termos</a>
       <span>© 2026 URO LASER LTDA · CNPJ 27.839.278/0001-03</span>
     </nav>
+    <p class="credit">Site por <a href="https://www.tivdc.com.br/" target="_blank" rel="noopener">TIVDC</a></p>
   </div>
 </footer>
 <a class="float" href="https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta." target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.18-3.1.82.83-3.02-.2-.31A8.1 8.1 0 0 1 12.04 3.8Zm-3.2 4.2c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.17 1.78 2.83 4.4 3.85 2.17.85 2.62.68 3.09.64.47-.04 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.23-.17-.49-.3-.26-.13-1.52-.75-1.76-.84-.23-.09-.4-.13-.58.13-.17.26-.66.84-.81 1-.15.18-.3.2-.56.07-.26-.13-1.1-.4-2.1-1.29-.77-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.18.04-.33-.02-.46-.07-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.5Z"/></svg>WhatsApp</a>
