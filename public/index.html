@@ -807,6 +807,14 @@ a.skip:hover{color:#fff}
 .nb-arrows button{width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer;transition:background-color .25s var(--ease)}
 .nb-arrows button:hover{background:rgba(255,255,255,.14)}
 .nb-note{margin-top:16px;font-size:14px;color:#BBD3EE;max-width:62ch}
+.arts{display:grid;gap:16px}
+.art{display:flex;flex-direction:column;gap:10px;padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);text-decoration:none;color:var(--ink);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease)}
+.art h3{font-size:21px;font-weight:600;line-height:1.2}
+.art p{color:var(--muted);font-size:15.5px}
+.art .lnk{margin-top:auto;font-weight:700;color:var(--brand)}
+@media (hover:hover){.art:hover{transform:translateY(-4px);box-shadow:var(--lift);border-color:var(--green)}}
+@media (min-width:700px){.arts{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1040px){.arts{grid-template-columns:repeat(4,1fr)}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms !important}}
 </style>
 <script>if(Date.now()>=new Date('2026-12-01T00:00:00-03:00').getTime())document.documentElement.classList.add('nb-fim')</script>
@@ -821,6 +829,7 @@ a.skip:hover{color:#fff}
       <a href="#consulta">Primeira consulta</a>
       <a href="#especialidades">Especialidades</a>
       <a href="#equipe">Equipe</a>
+      <a href="#artigos">Artigos</a>
       <a href="#duvidas">Dúvidas</a>
       <a href="#contato">Contato</a>
     </nav>
@@ -832,6 +841,7 @@ a.skip:hover{color:#fff}
           <a href="#consulta">Primeira consulta</a>
           <a href="#especialidades">Especialidades</a>
           <a href="#equipe">Equipe</a>
+          <a href="#artigos">Artigos</a>
           <a href="#duvidas">Dúvidas</a>
           <a href="#contato">Contato</a>
           <a href="tel:+557734277267">Ligar (77) 3427-7267</a>
@@ -1018,6 +1028,19 @@ a.skip:hover{color:#fff}
         <div><h3>Dra. Lívia Vasconcelos</h3><span class="role">Nutricionista</span><span class="reg">CRN 7628</span></div>
       </li>
     </ul>
+  </div>
+</section>
+
+<section id="artigos" class="section">
+  <div class="wrap">
+    <div class="sec-head"><h2>Artigos para entender melhor a sua saúde.</h2><p>Informação em linguagem simples, escrita pela equipe da Urolaser.</p></div>
+    <div class="arts">
+      <a class="art" href="/artigos/novembro-azul-saude-do-homem"><h3>Novembro Azul: como cuidar da saúde do homem</h3><p>Novembro Azul lembra a importância da prevenção. Veja por que os homens adiam a consulta e o que conversar com o urologista.</p><span class="lnk">Ler artigo</span></a>
+      <a class="art" href="/artigos/quando-procurar-um-urologista"><h3>Quando procurar um urologista? Sinais e mitos</h3><p>Saiba quando procurar um urologista além do exame de próstata: sintomas urinários, infecções, cálculos e saúde sexual.</p><span class="lnk">Ler artigo</span></a>
+      <a class="art" href="/artigos/biopsia-de-prostata"><h3>Biópsia de próstata: o que é e o que esperar</h3><p>Entenda por que o médico pede a biópsia de próstata, como o exame é feito, com anestesia, e como se preparar.</p><span class="lnk">Ler artigo</span></a>
+      <a class="art" href="/artigos/ardencia-ao-urinar-e-outros-sinais"><h3>Ardência ao urinar e outros sinais de alerta</h3><p>Feridas, ardência ao urinar, coceira, secreção e dor na relação podem indicar infecções. Saiba quando buscar avaliação.</p><span class="lnk">Ler artigo</span></a>
+    </div>
+    <p style="margin-top:20px"><a href="/artigos" style="font-weight:700">Ver todos os artigos</a></p>
   </div>
 </section>
 
