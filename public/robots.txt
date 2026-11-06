@@ -17,4 +17,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://urolaservca.com.br/sitemap.xml
+Sitemap: https://www.urolaservca.com.br/sitemap.xml
