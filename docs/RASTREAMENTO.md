@@ -1,7 +1,9 @@
 # Rastreamento de anúncios (Google Ads e Meta Ads)
 
-Estado atual: **desligado**. Hoje o site não usa cookies, não mostra aviso e não chama terceiros.
-Só uma coisa funciona: a **origem do contato no WhatsApp** (código no texto pronto da mensagem).
+Estado atual: **ligado desde 10/11/2026** (commit `917b0d7`). O site mostra o aviso de cookies
+(Recusar/Aceitar) e só carrega o Google Tag Manager depois do "Aceitar". Sem aceite não há cookie,
+chamada ao Google nem envio ao sistema de atendimento. A **origem do contato no WhatsApp**
+(código no texto pronto da mensagem) funciona sempre. O pixel da Meta **não** está ligado.
 
 Arquivo de controle: `public/assets/track.js` (bloco `CFG` no topo).
 
@@ -38,7 +40,8 @@ O botão de WhatsApp acrescenta ao texto pronto um código que o sistema de aten
 |---|---|---|
 | Sem parâmetros | `#site-<contexto>` (ex.: `#site-urologia`, `#site-home`, `#site-artigo-biopsia-de-prostata`, `#site-novembro-azul`) | Site da Clínica |
 | `utm_source=google` + `utm_medium=cpc` (ou `gclid`) | `#gads-<campanha>` | Google Ads |
-| `utm_source=google&utm_medium=perfil` (Perfil da Empresa) | `#gmn-perfil` | Google Meu Negócio |
+| `utm_source=google&utm_medium=site&utm_campaign=gmn` (link do site no Perfil da Empresa) | `#gmn-site` | Google Meu Negócio · site |
+| Botão de WhatsApp do Perfil da Empresa (link `wa.me` direto) | `#gmn-perfil` | Google Meu Negócio |
 | `utm_source=instagram&utm_medium=bio` | `#ig-bio` | Instagram Orgânico |
 | `utm_source=facebook` (orgânico) | `#fb-<campanha>` | Facebook Orgânico |
 | `utm_source=meta` ou `instagram` + `utm_medium=paid` | `utm_source=...&utm_medium=paid&utm_campaign=<campanha>` | Facebook Ads / Instagram Ads |
@@ -46,7 +49,8 @@ O botão de WhatsApp acrescenta ao texto pronto um código que o sistema de aten
 Para desligar o código (mantendo só a frase "Vim pelo Instagram/Google"): `refCodes: false`.
 
 ### URLs para configurar
-- **Perfil da Empresa (site):** `https://www.urolaservca.com.br/?utm_source=google&utm_medium=perfil`
+- **Perfil da Empresa (site):** `https://www.urolaservca.com.br/?utm_source=google&utm_medium=site&utm_campaign=gmn`
+- **Perfil da Empresa (WhatsApp):** `https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20Google%20e%20quero%20agendar%20uma%20consulta.%20%23gmn-perfil`
 - **Bio do Instagram:** `https://www.urolaservca.com.br/?utm_source=instagram&utm_medium=bio`
 - **Google Ads (sufixo do URL final):** `utm_source=google&utm_medium=cpc&utm_campaign={campaignid}-NOME-DA-CAMPANHA`
   (use um nome curto, sem acento; o código sai como `#gads-nome-da-campanha`)
@@ -76,22 +80,40 @@ Os eventos **não levam** especialidade, artigo nem condição de saúde, só `p
 (`home`, `artigo`, `institucional`). É de propósito: as políticas do Google e da Meta
 restringem o envio de dados de saúde.
 
-## 3. Integração com o sistema de atendimento (cliques com `gclid`/`fbclid`)
+## 3. Integração com o sistema de atendimento (cliques com `gclid`/`fbclid`) — ativa
 
-Se `CFG.endpoint` for preenchido, depois do "Aceitar" e quando a visita tiver `gclid`, `gbraid`,
-`wbraid` ou `fbclid`, o site:
+`CFG.endpoint = https://www.conectasaudevc.com.br/api/track/click` (com `www`: sem `www` redireciona
+e o beacon se perde). Depois do "Aceitar", com `gclid`, `gbraid`, `wbraid` ou `fbclid`, o site:
 1. gera um token curto (6 letras/números),
-2. envia `POST` (JSON, `sendBeacon`) para o endpoint: 
-   `{ "token": "223z8h", "landing": "/", "referrer": "...", "ts": "ISO-8601", "params": { "utm_source": "google", "utm_medium": "cpc", "utm_campaign": "...", "gclid": "..." } }`
-3. acrescenta `ref:223z8h` ao final do texto do WhatsApp.
+2. envia `POST` (`sendBeacon`, `Content-Type: text/plain`, sem verificação prévia de CORS) com
+   `{ "token", "ts", "params": { utm_*, gclid/gbraid/wbraid/fbclid, ref } }`. **Não vai página de
+   entrada nem referrer** (a página pode ser de um tema de saúde),
+3. acrescenta `ref:xxxxxx` ao final do texto do WhatsApp.
 
-**Pendente no sistema de atendimento** (não feito, repositório principal):
-- rota que receba o POST e guarde `token -> params` (com data, para expirar);
-- ler `ref:([a-z0-9]{6})` na 1ª mensagem (junto de `detectAcquisition`) e ligar à conversa;
-- quando o contato virar consulta/paciente, enviar a conversão: 
-  - **Google Ads**: importação de conversões offline com o `gclid` (ou `gbraid`/`wbraid`);
-  - **Meta**: Conversions API com `fbclid`/`fbc` e telefone com hash (SHA-256).
-- opcional: aceitar `#igads-`/`#fbads-` em vez da URL `utm_...` no texto (mais discreto).
+No CRM (repo `marcacao`, já no ar):
+- o endpoint aceita JSON ou text/plain até 2 KB, CORS só para `https://www.urolaservca.com.br`,
+  grava token + identificadores de clique + `utm_*`, e apaga os cliques após **90 dias**;
+- a 1ª mensagem com `ref:xxxxxx` liga o clique à conversa; `#site-`, `#gads-`, `#gmn-`, `#ig-`,
+  `#fb-` (e `#igads-`, `#fbads-`) viram canal + detalhe e somem da tela do atendimento;
+- **Meta (API de Conversões):** evento `Lead` só ao **agendar**, só com `event_name`, `event_time`,
+  `event_id`, `action_source=system_generated` e `fbc`. Sem telefone, URL nem dado clínico;
+- **Google Ads (conversões offline):** planilha em
+  `https://www.conectasaudevc.com.br/api/conversions/google-ads` (Basic Auth; usuário e senha
+  são digitados no Google Ads por quem administra). Colunas: Google Click ID, Conversion Name
+  (`Agendamento` ou `Comparecimento`, nomes exatos) e Conversion Time (fuso -0300).
+
+**`Contact` × `Lead` (Meta):** o clique no WhatsApp é `Contact`; `Lead` é exclusivo da API de
+Conversões do CRM (agendamento). Se o pixel for ligado: só PageView e `Contact`, sem
+correspondência avançada, sem eventos automáticos, sem parâmetros extras.
+
+**Google Ads:** conversão do clique no WhatsApp, se criada, é **secundária**. Principais:
+`Agendamento` (principal) e `Comparecimento` (secundária por ora; vira principal com ~30/mês).
+Sem remarketing nem público por página de saúde.
+
+**Privacidade do Google Analytics:** o `track.js` define `page_location`, `page_title` e
+`page_referrer` genéricos (`/`, `/artigos`, `/institucional`; título genérico; só origem do
+referrer externo), mantendo apenas `utm_*` e `gclid` na entrada por anúncio. Assim nenhum
+tema de saúde (nome de artigo/especialidade) chega ao Google.
 
 ## 4. Cuidados (saúde)
 
