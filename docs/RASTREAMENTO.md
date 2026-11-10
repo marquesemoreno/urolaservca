@@ -41,7 +41,7 @@ O botão de WhatsApp acrescenta ao texto pronto um código que o sistema de aten
 | Sem parâmetros | `#site-<contexto>` (ex.: `#site-urologia`, `#site-home`, `#site-artigo-biopsia-de-prostata`, `#site-novembro-azul`) | Site da Clínica |
 | `utm_source=google` + `utm_medium=cpc` (ou `gclid`) | `#gads-<campanha>` | Google Ads |
 | `utm_source=google&utm_medium=site&utm_campaign=gmn` (link do site no Perfil da Empresa) | `#gmn-site` | Google Meu Negócio · site |
-| Botão de WhatsApp do Perfil da Empresa (link `wa.me` direto) | `#gmn-perfil` | Google Meu Negócio |
+| Perfil da Empresa: agendamento/WhatsApp (`/whatsapp-google`) | `#gmn-perfil` | Google Meu Negócio |
 | `utm_source=instagram&utm_medium=bio` | `#ig-bio` | Instagram Orgânico |
 | `utm_source=facebook` (orgânico) | `#fb-<campanha>` | Facebook Orgânico |
 | `utm_source=meta` ou `instagram` + `utm_medium=paid` | `utm_source=...&utm_medium=paid&utm_campaign=<campanha>` | Facebook Ads / Instagram Ads |
@@ -50,7 +50,7 @@ Para desligar o código (mantendo só a frase "Vim pelo Instagram/Google"): `ref
 
 ### URLs para configurar
 - **Perfil da Empresa (site):** `https://www.urolaservca.com.br/?utm_source=google&utm_medium=site&utm_campaign=gmn`
-- **Perfil da Empresa (WhatsApp):** `https://wa.me/5577999257550?text=Ol%C3%A1!%20Vim%20pelo%20Google%20e%20quero%20agendar%20uma%20consulta.%20%23gmn-perfil`
+- **Perfil da Empresa: agendamento/WhatsApp:** `https://www.urolaservca.com.br/whatsapp-google` (o Google bloqueou `wa.me` no perfil). A página redireciona na hora para o WhatsApp com o texto `... #gmn-perfil`, tem botão "Falar no WhatsApp" de reserva, é `noindex`, fora do sitemap e não carrega `track.js` nem cookies.
 - **Bio do Instagram:** `https://www.urolaservca.com.br/?utm_source=instagram&utm_medium=bio`
 - **Google Ads (sufixo do URL final):** `utm_source=google&utm_medium=cpc&utm_campaign={campaignid}-NOME-DA-CAMPANHA`
   (use um nome curto, sem acento; o código sai como `#gads-nome-da-campanha`)
