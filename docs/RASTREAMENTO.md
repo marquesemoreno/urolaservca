@@ -21,9 +21,12 @@ Arquivo de controle: `public/assets/track.js` (bloco `CFG` no topo).
   - `GA4 - Configuração` (Google Analytics, acionador Initialization - All Pages)
   - `GA4 - Evento generate_lead`, `GA4 - Evento contact`, `GA4 - Evento get_directions`
     (cada uma com o seu acionador de evento personalizado)
+- Versão 2 ("v1 - GA4 e eventos de contato") **publicada em 09/11/2026**. O site ainda não
+  carrega o contêiner (`CFG.gtm` vazio), então não tem efeito para os visitantes.
+- Acesso: `urolaservca@gmail.com` convidado como **Administrador** no Tag Manager (convite
+  pendente de aceite) e no Google Analytics (conta a354402169).
 - Pendente: tags de conversão do **Google Ads** e da **Meta** (faltam os IDs), marcar
-  `generate_lead` como evento-chave no GA4 (só aparece depois do primeiro evento recebido),
-  e publicar a versão do contêiner.
+  `generate_lead` como evento-chave no GA4 (só aparece depois do primeiro evento recebido).
 - Para ligar no site: preencher `CFG.gtm` e atualizar a política de privacidade no mesmo envio.
 
 ## 1. Origem do contato (já ativa, sem cookies)
