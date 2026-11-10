@@ -5,6 +5,27 @@ Só uma coisa funciona: a **origem do contato no WhatsApp** (código no texto pr
 
 Arquivo de controle: `public/assets/track.js` (bloco `CFG` no topo).
 
+## Contêiner do Google Tag Manager (criado em 06/11/2026)
+
+- Conta: **Urolaser Especialidades Médicas** · Contêiner: **www.urolaservca.com.br** (Web)
+- ID: **`GTM-PKSQB3SV`** (ainda NÃO está no site: `CFG.gtm` em `track.js` continua vazio)
+- Criado no login **suporte.tivdc@gmail.com**. Adicionar o e-mail da clínica como administrador
+  (Administrador > Gerenciamento de usuários) para ela ser dona do contêiner.
+- Já configurado (espaço de trabalho, ainda sem versão publicada):
+  - Acionadores: `Evento - generate_lead (WhatsApp)`, `Evento - contact (telefone e e-mail)`, `Evento - get_directions (Traçar rota)`
+  - Variáveis da camada de dados: `DLV - method`, `DLV - page_type`
+- **Google Analytics 4** (criado em 09/11/2026): conta nova da clínica (não a da TIVDC), fuso
+  Horário Bahia, fluxo web `https://www.urolaservca.com.br`, ID da métrica **`G-KWPP77M49J`**.
+  Medição otimizada desligada (site de saúde: só `page_view` + os eventos abaixo).
+- Tags criadas no espaço de trabalho (ainda sem versão publicada):
+  - `GA4 - Configuração` (Google Analytics, acionador Initialization - All Pages)
+  - `GA4 - Evento generate_lead`, `GA4 - Evento contact`, `GA4 - Evento get_directions`
+    (cada uma com o seu acionador de evento personalizado)
+- Pendente: tags de conversão do **Google Ads** e da **Meta** (faltam os IDs), marcar
+  `generate_lead` como evento-chave no GA4 (só aparece depois do primeiro evento recebido),
+  e publicar a versão do contêiner.
+- Para ligar no site: preencher `CFG.gtm` e atualizar a política de privacidade no mesmo envio.
+
 ## 1. Origem do contato (já ativa, sem cookies)
 
 O botão de WhatsApp acrescenta ao texto pronto um código que o sistema de atendimento já lê
