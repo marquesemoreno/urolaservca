@@ -1211,14 +1211,6 @@ m.addEventListener('click',function(e){if(e.target.closest('.menu-list a'))m.rem
 document.addEventListener('click',function(e){if(!m.contains(e.target))m.removeAttribute('open')});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')m.removeAttribute('open')});})();
 </script>
-<script>
-(function(){try{
-var q=new URLSearchParams(location.search),src=(q.get('utm_source')||q.get('origem')||'').toLowerCase();
-var nomes={instagram:'Instagram',ig:'Instagram',facebook:'Facebook',google:'Google'},nome=nomes[src];
-if(!nome)return;
-document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function(a){
-a.href=a.href.replace('Vim%20pelo%20site','Vim%20pelo%20'+encodeURIComponent(nome));});
-}catch(e){}})();
-</script>
+<script src="/assets/track.js" defer></script>
 </body>
 </html>
