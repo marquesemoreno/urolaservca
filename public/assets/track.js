@@ -1,19 +1,19 @@
 /* Urolaser: origem dos contatos (WhatsApp) e rastreamento de anúncios, com consentimento.
  *
- * ESTADO ATUAL: desligado. Com `gtm` vazio não há banner, não há cookie, não há
- * armazenamento e nenhuma chamada a terceiros. Só a "origem do contato" funciona: o texto
- * pré-preenchido do botão de WhatsApp ganha um código no formato que o sistema de
- * atendimento já entende (#site-<contexto>, #gads-<campanha>, #gmn-..., #ig-..., #fb-...).
+ * ESTADO ATUAL: ligado (a partir do envio de 10/11/2026). Aviso de cookies com "Recusar" e
+ * "Aceitar"; o Google Tag Manager só carrega depois do "Aceitar". Sem aceite não há cookie
+ * de terceiros, nem chamada ao Google, nem envio ao sistema de atendimento. Com `gtm` vazio
+ * tudo isso volta a ficar desligado.
  *
- * Para ligar o rastreamento de anúncios: preencha `gtm` (ID do contêiner, ex. GTM-XXXXXXX)
- * e, se for usar o sistema de atendimento, `endpoint`. Leia docs/RASTREAMENTO.md antes:
- * a política de privacidade precisa ser atualizada no mesmo dia.
+ * A "origem do contato" funciona sempre: o texto pré-preenchido do botão de WhatsApp ganha um
+ * código no formato que o sistema de atendimento entende (#site-<contexto>, #gads-<campanha>,
+ * #gmn-..., #ig-..., #fb-...). Detalhes em docs/RASTREAMENTO.md.
  */
 (function () {
   'use strict';
   var CFG = {
-    gtm: '',          // ID do Google Tag Manager. Vazio = rastreamento desligado.
-    endpoint: '',     // URL do sistema de atendimento que recebe {token, gclid, fbclid, utm_*}. Vazio = não envia.
+    gtm: 'GTM-PKSQB3SV',  // ID do Google Tag Manager. Vazio = rastreamento desligado.
+    endpoint: 'https://www.conectasaudevc.com.br/api/track/click', // sistema de atendimento (com www: sem www redireciona e o beacon se perde). Vazio = não envia.
     refCodes: true,   // acrescenta o código de origem ao texto do WhatsApp
     consentDays: 180  // validade da escolha de cookies
   };
@@ -80,8 +80,10 @@
     (window.crypto || window.msCrypto).getRandomValues(b);
     for (var i = 0; i < b.length; i++) t += 'abcdefghjkmnpqrstuvwxyz23456789'[b[i] % 31];
     attr.ref = t; persistAttr();
-    var body = JSON.stringify({ token: t, landing: location.pathname, referrer: document.referrer.slice(0, 200), ts: new Date().toISOString(), params: attr });
-    try { navigator.sendBeacon(CFG.endpoint, new Blob([body], { type: 'application/json' })); } catch (e) {}
+    // Só o token e os identificadores de campanha. Sem página de entrada nem referrer
+    // (a página pode ser de um tema de saúde). text/plain evita a verificação prévia de CORS.
+    var body = JSON.stringify({ token: t, ts: new Date().toISOString(), params: attr });
+    try { navigator.sendBeacon(CFG.endpoint, new Blob([body], { type: 'text/plain' })); } catch (e) {}
     return t;
   }
   function decorate(a) {
@@ -187,14 +189,28 @@
     document.body.appendChild(d);
   }
   function footerLink() {
-    var n = document.querySelector('.foot nav'); if (!n || !ENABLED) return;
+    var n = document.querySelector('.foot nav') || document.querySelector('body > footer'); if (!n || !ENABLED) return;
     var a = document.createElement('a'); a.href = '#'; a.textContent = 'Preferências de cookies';
     a.addEventListener('click', function (e) { e.preventDefault(); showBanner(); });
-    n.insertBefore(a, n.firstChild);
+    if (n.firstChild && n.tagName === 'NAV') n.insertBefore(a, n.firstChild);
+    else { n.appendChild(document.createTextNode(' · ')); n.appendChild(a); }
   }
 
   function init() {
-    if (ENABLED) gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' });
+    if (ENABLED) {
+      gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' });
+      // O Google Analytics não recebe o endereço nem o título reais da página: um artigo
+      // sobre um assunto de saúde revelaria o interesse do visitante. Vai só o tipo da página
+      // e, na entrada por anúncio, os parâmetros de campanha.
+      var kind = pageType(), keep = [];
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'gbraid', 'wbraid'].forEach(function (p) {
+        if (q.get(p)) keep.push(p + '=' + encodeURIComponent(q.get(p).slice(0, 100)));
+      });
+      var path = kind === 'home' ? '/' : (kind === 'artigo' ? '/artigos' : '/institucional');
+      var titles = { home: 'Urolaser Especialidades Médicas', artigo: 'Artigos | Urolaser', institucional: 'Urolaser Especialidades Médicas' };
+      var ref = ''; try { if (document.referrer) { var ru = new URL(document.referrer); if (ru.origin !== location.origin) ref = ru.origin + '/'; } } catch (e) {}
+      gtag('set', { page_location: location.origin + path + (keep.length ? '?' + keep.join('&') : ''), page_title: titles[kind], page_referrer: ref });
+    }
     decorateAll();
     if (!ENABLED) return;
     footerLink();
